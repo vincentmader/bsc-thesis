@@ -1,0 +1,68 @@
+
+\author{Vincent C. Mader}
+
+
+\documentclass[
+  a4paper, 12pt, twoside, chapterprefix
+]{report}
+
+
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+\usepackage{sectsty}
+
+\chapternumberfont{\Large} 
+\chaptertitlefont{\Large}
+
+\graphicspath{{../figures/}}
+\sisetup{separate-uncertainty}
+
+% redefine paragraph to include newline after headline
+%\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{} \}
+% redefine \vec command to have bold vectors
+\let\vec\mathbf
+% define author name
+\newcommand{\theauthor}{Vincent C. Mader}
+% define text color commands
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+
+\begin{document}
+
+  \pagenumbering{gobble}  % no page numbering (turn back on after title page)
+  \newpage
+  \input{title_page}
+
+  \newpage
+  \input{abstract}
+  \vspace{350px}
+  \input{zusammenfassung}
+  \pagenumbering{arabic}
+  \setcounter{page}{4}
+
+  \newpage
+  \tableofcontents
+  \vspace{300px}
+  \listoffigures
+
+  \newpage
+  \input{introduction}
+
+  \newpage
+  ...
+
+  \newpage
+  \input{bibliography}
+
+  \newpage
+  \input{declaration}
+
+\end{document}
+
