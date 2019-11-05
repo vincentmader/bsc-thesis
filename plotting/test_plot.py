@@ -14,7 +14,7 @@ r = np.linspace(0, RES_r - 1, RES_r)
 
 for i in range(1000):
 
-    file_path = f'../fargo2d1d/out/{SIMULATION_ID}/gasdens{i}.dat'
+    file_path = f'../fargo2d1d/{SIMULATION_ID}/out/gasdens{i}.dat'
 
     try:
         σ = np.log10(np.fromfile(f'{file_path}').reshape(RES_r, RES_φ))

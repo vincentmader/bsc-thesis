@@ -23,7 +23,7 @@
 \sisetup{separate-uncertainty}
 
 % redefine paragraph to include newline after headline
-%\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{} \}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{} \\}
 % redefine \vec command to have bold vectors
 \let\vec\mathbf
 % define author name
@@ -53,6 +53,7 @@
   \listoffigures
 
   \newpage
+  \chapter{Introduction}
   \input{introduction}
 
   \newpage

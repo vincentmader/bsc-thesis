@@ -37,8 +37,16 @@ with a 2D grid ranging from 0.15 to 4.5, I run on 6 cores and it takes me
 (50 outputs with an output every 100 orbits)
 
 ### building the algorithm on the MPIA cluster
-Before doing the steps from above, openmpi needs to be loaded by writing:
-  `module load openmpi-4.0.1`			!! module command not found
+
+First, you have to connect to the bachelor-vis node of the MPIA cluster
+  `ssh -Y mader@bachelor-vis`
+
+Your personal simulation files are located attention
+  `/mnt/beegfs/bachelor/groups/bitsch/users/mader/`
+
+Building works almost exactly as is does locally, but first you have to
+load openmpi by doing:
+  `module load openmpi-4.0.1`
 
 And then you can 
   `make mrproper`
@@ -47,6 +55,17 @@ and
   `make BUILD=parallel`
 
 ### running the algorithm on the MPIA cluster (submitting a simulation)
+To submit a simulation to the SLURM queue, you have to login onto another node
+  `ssh -Y mader@bachelor-login`
+After setting up your personal simulation files, simulations can be submitted
+by doing
+  `sbatch submit.sh`
+To check on the status of the queue, you can do
+  `squeue`
+or if you only want to see your own simulations
+  `squeue -u mader`
+
+More info:
 On the USB stick, you also have a submit.sh file.
 This is a submission file for the Bachelor.
 
@@ -101,3 +120,8 @@ Output data is stored in a single 1D array, can be reshaped to 2D with
 !!!
 
 
+
+
+
+
+### MPIA cluster pw: 7UkFEY4RH_-w
