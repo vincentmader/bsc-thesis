@@ -86,42 +86,7 @@ and in the mpirun -np lines.
 
 
 
-various
--------
-
-### Did simulation of template file run correctly?
-Are the lines in the image the path cleared by the planet?
-!!!
-
-#### What exactly does the 'template' simulation do?
-!!!
 
 
-### How exactly can I influence the simulation?
-You can create/copy/edit a '.par' file in the in directory.
+## MPIA cluster pw: 7UkFEY4RH_-w
 
-#### How are tabs treated in '.par' files? How do comments work?
-!!!
-
-#### What do all the different parameters do?
-!!!
-
-#### How can I activate/deactive accretion?
-!!!
-
-#### What do the two '.cfg' files do exactly? What's the difference?
-!!!
-
-
-
-### How can I convert the output data from xy to rφ?
-Output data is stored in a single 1D array, can be reshaped to 2D with
-`np.reshape()`. To display in polar coordinates, ...
-!!!
-
-
-
-
-
-
-### MPIA cluster pw: 7UkFEY4RH_-w
