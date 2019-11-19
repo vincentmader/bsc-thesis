@@ -44,8 +44,16 @@
   \input{abstract}
   \vspace{350px}
   \input{zusammenfassung}
+
   \pagenumbering{arabic}
+  % make sure this is set correctly
   \setcounter{page}{4}
+
+  \newpage
+  \input{preface}
+
+  \newpage
+  \input{acknowledgements}
 
   \newpage
   \tableofcontents
@@ -53,11 +61,22 @@
   \listoffigures
 
   \newpage
-  \chapter{Introduction}
   \input{introduction}
 
   \newpage
+  \input{theory}
+
+  \newpage
+  \input{numerical_techniques}
+
+  \newpage
   ...
+
+  \newpage
+  \input{results}
+
+  \newpage
+  \input{summary}
 
   \newpage
   \input{bibliography}
