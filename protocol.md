@@ -3,8 +3,8 @@ DAILY PROTOCOL
 ==============
 Arising questions are marked with a !Q! tag to make them easily searchable.
 
-2019-11-04, DAY 001
--------------------
+Mon, 2019-11-04, DAY 001
+------------------------
   * come to MPIA at 09:30, meet with Dr. Bitsch
   * get electronic key & cafeteria card
   * bureaucracy: contract, insurance, cv, laufzettel
@@ -14,16 +14,16 @@ Arising questions are marked with a !Q! tag to make them easily searchable.
   * meet with Camille: she explained FARGO, setup parameters, disk physics
   * leave at 18:30
 
-2019-11-05, DAY 002
--------------------
+Tue, 2019-11-05, DAY 002
+------------------------
   * come to MPIA at 09:30, play around with simulation data
   * meet with Camille: setup of VPN, connection to cluster, slurm
   * run low resolution simulations: one with eccentricity e=0, one with e=.1
   * setup plotting method: once in rectangular grid, once in polar coords
   * leave at 17:30
 
-2019-11-06, DAY 003
--------------------
+Wed, 2019-11-06, DAY 003
+------------------------
   * come to MPIA at 09:30
   * setup plotting of 1D data, all 3 plots are now displayed together in one png
   * run more low res simulations: e=.05, e=.25, e=.5
@@ -45,8 +45,8 @@ Arising questions are marked with a !Q! tag to make them easily searchable.
     * mass changes: if it gets bigger, rH gets bigger => no problem
     * migration turned on: can be a problem, might need to look into that
 
-2019-11-07, DAY 004
--------------------
+Thu, 2019-11-07, DAY 004
+------------------------
   * come to MPIA at 09:30
   * start writing method to calculate planet mass after each time step
   * first idea: mass in Hill sphere
@@ -83,28 +83,28 @@ TODO:
     * output every 50 orbits
   * do this for e=0 and e=0.2
 
-2019-11-08, DAY 005
--------------------
+Fri, 2019-11-08, DAY 005
+------------------------
   * feeling sick, not going to the MPIA today
   * start simulations from home: (1) from TODO above
 
-2019-11-11, DAY 006
--------------------
+Mon, 2019-11-11, DAY 006
+------------------------
   * not going to MPIA, need to work on FP today
   * I started simulations for (2) from TODO above the day before yesterday
   * fix 2D polar coordinates plot: had to change from deg to rad
   * continue working on plotting, modularize into multiple functions
 
-2019-11-12, DAY 007
--------------------
+Tue, 2019-11-12, DAY 007
+------------------------
   * only shortly went to MPIA, still have to do a lot of FP today
 
-2019-11-13, DAY 008
--------------------
+Wed, 2019-11-13, DAY 008
+------------------------
   * FP Nachbesprechung for Optics
 
-2019-11-14, DAY 009
--------------------
+Thu, 2019-11-14, DAY 009
+------------------------
   * write Python function: plot \dot{m} as function of eccentricity 
   * talk to Bertram
     * Planet sollte an einem Ort stehen bleiben
@@ -116,8 +116,19 @@ TODO:
   * PSF group meeting: how to work with ALMA data, presentation by Nicolas
   * Abgabe des Laufzettels im Sekretariat
   * fix 1d plot (use ascii files, look whether that resolves the issue)
-TODO:
+
+Fri, 2019-11-15, DAY 010
+------------------------
+  * not going to MPIA today, FP Nachbesprechung Elektronik & Röntgen-Laue
+
+Mon, 2019-11-18, DAY 011
+------------------------
   * try simulating 2d with rotating frame, to keep planet fixed
+    -> use frame parameter C (corotating)
+
+Tue, 2019-11-19, DAY 012
+------------------------
+TODO:
   * make 1d plots for different resolutions, compare -> first plot in BA
     * should converge/stop changing for higher resolutions -> use 5c/rH ?
   * make plots for different values of e

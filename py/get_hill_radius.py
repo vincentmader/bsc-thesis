@@ -1,5 +1,5 @@
 
-def main(M, m, a, e):
+def main(M=1, m=1e-3, a=1, e=0):
     """
     calculate the Hill radius of a body based on the following input params:
 
