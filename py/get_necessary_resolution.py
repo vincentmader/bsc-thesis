@@ -15,6 +15,7 @@ def main(M, m, a, e, rH_cells, r_min, r_max):
     param rH_cells: number of cells in Hill radius of planet
     """
 
+
     rH = get_hill_radius(M, m, a, e)
     print(f'{rH = } supposed to correspond to {rH_cells} cells')
 
@@ -27,8 +28,26 @@ def main(M, m, a, e, rH_cells, r_min, r_max):
     res_r = (r_max - r_min) / a * cells_between_star_and_planet
     print(f'  =>  {res_r = }')
 
-    res_φ = 2 * np.pi * res_r
+    res_φ = optimal_Nsec(r_min, r_max, res_r)  # 2 * np.pi * res_r
     print(f'  => {res_φ = }')
+
+
+def area_of_ring_at_radius_1(r_min, r_max, N_rad):
+
+    # ring width
+    δr = (r_max - r_min) / N_rad
+    # radial boundaries of ring
+    r_1, r_2 = 1, 1 + δr
+
+    return np.pi * (r_2**2 - r_1**2)
+
+
+def optimal_Nsec(r_min, r_max, N_rad):
+
+    A = area_of_ring_at_radius_1(r_min, r_max, N_rad)
+    δr = (r_max - r_min) / N_rad
+
+    return A / δr**2
 
 
 def testing_cells_per_rH():
@@ -39,8 +58,10 @@ def testing_cells_per_rH():
     r_min = .2
     r_max = 3
 
+    print(f'{M = }, {m = }, {a = }, {e = }, {r_min = }, {r_max = }')
+
     for rH_cells in [2.5, 5, 10]:
-        print('')
+        print(f'\n{rH_cells = }')
         main(M, m, a, e, rH_cells, r_min, r_max)
 
 

@@ -12,3 +12,8 @@ def main(M=1, m=1e-3, a=1, e=0):
     r_H = a * (1 - e) * (m / (3 * M)) ** (1 / 3)
     return r_H
 
+
+if __name__ == '__main__':
+    print('M = 1, m = 1e-3, a = 1, e = 0')
+    print('rH =', main())
+
