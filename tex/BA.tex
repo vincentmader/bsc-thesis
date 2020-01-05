@@ -6,15 +6,22 @@
   a4paper, 12pt, twoside, chapterprefix
 ]{report}
 
-
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{biblatex}
+\usepackage{chemformula}
+%\usepackage[superscript,biblabel]{cite}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{sectsty}      % ?
 \usepackage{siunitx}
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
 
-\usepackage{sectsty}
+\addbibresource{references.bib}
+% treat references as regular section
+\defbibheading{secbib}[References]{%
+  \section{#1}%
+  \markboth{#1}{#1}}
 
 \chapternumberfont{\Large} 
 \chaptertitlefont{\Large}
@@ -44,7 +51,7 @@
   \input{abstract}
   \vspace{350px}
   \input{zusammenfassung}
-
+  
   \pagenumbering{arabic}
   % make sure this is set correctly
   \setcounter{page}{4}
@@ -79,7 +86,7 @@
   \input{summary}
 
   \newpage
-  \input{bibliography}
+  \input{appendix.tex}
 
   \newpage
   \input{declaration}
