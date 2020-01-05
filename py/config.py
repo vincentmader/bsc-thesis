@@ -9,4 +9,5 @@ BACHELOR_DIR = os.path.join(CLOUD_DIR, 'Uni/Bachelor-Arbeit/')
 FARGO_DIR = os.path.join(BACHELOR_DIR, 'fargo2d1d')
 FIGURE_DIR = os.path.join(BACHELOR_DIR, 'figures')
 
+MAX_OUT_FILE_IDX = 10000
 

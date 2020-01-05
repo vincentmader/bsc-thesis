@@ -47,7 +47,7 @@ def get_gap_limits(Σ):
 
         # calculate pressure P as function of distance from center r
         P = get_P(Σ_1D)
-        # calculate logarithmic derivative of pressure 
+        # calculate logarithmic derivative of pressure
         gradLogP = grad(np.log(r), np.log(P))
 
         # plot gradLogP for debugging
@@ -126,10 +126,10 @@ def get_gap_eccentricities(Σ):
     # calculate eccentricity for outer and inner gap limit each
     e_inner = 1
     e_outer = 1
-    # return 
+    # return
     return e_inner, e_outer
     # TODO:
-    #   - calculate eccentricities from inner and outer boundaries 
+    #   - calculate eccentricities from inner and outer boundaries
     #   - also do this for average/median gap position
 
 
