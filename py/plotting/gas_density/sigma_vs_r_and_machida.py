@@ -21,7 +21,7 @@ def main(outfile_idx):
 
     sim_group = 'machida'
 
-    fig = plt.figure(figsize=(8, 4))  # 10, 10))
+    fig = plt.figure(figsize=(4, 4))  # 10, 10))
 
     xs, ys = {}, {}
     for sim_id in os.listdir(os.path.join(FARGO_DIR, sim_group)):
@@ -55,10 +55,11 @@ def main(outfile_idx):
             color=colors[idx]
         )
     plt.xlabel(r'radial distance $r$ [code units]')
-    plt.ylabel(r'radially averaged gas density $\Sigma$ [code units]')
+    plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
     plt.xlim(0.5, 2)
     # plt.ylim(0, 1.1 * max(y))
     plt.legend(loc='best')
+    plt.gcf().subplots_adjust(left=.175)
 
     save_loc = os.path.join(FIGURE_DIR, sim_group, 'sigma_vs_r_and_machida.pdf')
     plt.savefig(save_loc)

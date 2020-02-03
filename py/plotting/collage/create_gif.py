@@ -8,7 +8,7 @@ from config import FIGURE_DIR
 
 def main(sim_group, sim_id):
 
-    print('\ngif for', sim_group, sim_id)
+    print('  plotting collage.create_gif')
 
     # define string holding file paths to all pngs, separated by a whitespace
     png_file_paths_separated_by_space = ''

@@ -15,6 +15,8 @@ import plotting
 
 def main(sim_group, sim_id, output_idx=None):
 
+    print('  plotting collage.create_pngs')
+
     if sim_group == '.DS_Store' or sim_id == '.DS_Store':
         return
 

@@ -28,6 +28,10 @@ def main(ax, sim_group, sim_id, iteration_step, plot_gap_bounds=False):
     r_min = sim_params.radial_boundaries.r_min_2D(sim_group, sim_id)
     r_max = sim_params.radial_boundaries.r_max_2D(sim_group, sim_id)
 
+    m_p = sim_params.planets.initial_mass(sim_group, sim_id)
+    a_p = sim_params.planets.initial_semi_major_axis(sim_group, sim_id)
+    e_p = sim_params.planets.initial_eccentricity(sim_group, sim_id)
+
     # define linspace for radial and azimuthal dimension
     r = np.linspace(r_min, r_max, res_r)
     φ = np.linspace(0, 2 * np.pi, res_φ)
@@ -59,7 +63,7 @@ def main(ax, sim_group, sim_id, iteration_step, plot_gap_bounds=False):
     for idx, gap_search_distance_in_rH in enumerate(GAP_SEARCH_DISTANCES):
         style = ['-', '--'][idx]
         inner_gap_boundary, outer_gap_boundary = analysis.gap.boundaries(
-            r, Σ, gap_search_distance_in_rH
+            r, Σ, gap_search_distance_in_rH, m_p, a_p, e_p
         )
         plt.plot(φ, inner_gap_boundary, f'k{style}')
         plt.plot(φ, outer_gap_boundary, f'k{style}')

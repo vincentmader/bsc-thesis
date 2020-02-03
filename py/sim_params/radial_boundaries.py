@@ -6,9 +6,13 @@ class InvalidSimIdentifiersError(Exception):
 
 
 def r_max_2D(sim_group, sim_id):
-    if sim_group in ['frame_rotation', '10000_orbits', '50000_orbits']:
+    if sim_group in [
+        'frame_rotation', '10000_orbits', '50000_orbits', 'migration'
+    ]:
         return 5.0
-    elif sim_group in ['first_tests', 'testing_cells_per_rH', 'testing_visc']:
+    elif sim_group in [
+        'first_tests', 'testing_cells_per_rH', 'testing_visc'
+    ]:
         return 3.0
     else:
         # if sim_group or sim_id is not found, raise Error
@@ -26,9 +30,12 @@ def r_min_1D(sim_group, sim_id):
 
 
 def r_min_2D(sim_group, sim_id):
-    if sim_group in ['frame_rotation', 'testing_cells_per_rH', 'testing_visc', '10000_orbits', '50000_orbits']:
+    if sim_group in [
+        'frame_rotation', 'testing_cells_per_rH', 'testing_visc',
+        '10000_orbits', '50000_orbits', 'migration'
+    ]:
         return 0.2
-    if sim_group in ['first_tests']:
+    elif sim_group in ['first_tests']:
         return 0.0
     else:
         # if sim_group or sim_id is not found, raise Error

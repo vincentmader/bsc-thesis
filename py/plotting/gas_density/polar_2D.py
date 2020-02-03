@@ -28,23 +28,24 @@ def main(ax, sim_group, sim_id, iteration_step, r_min_crop=None, r_max_crop=None
     # load gas density 2D array
     Σ = np.fromfile(f'{path_to_2D_data}').reshape(res_r, res_φ)
 
-    # get position of planet in disk
-    r_planet, φ_planet = sim_params.planets.current_position_rφ(
-        sim_group, sim_id, iteration_step
-    )
-    # convert position to indices of rows and columns in 2D array
-    planet_col_idx = int(math.floor(φ_planet / (2*π) * res_φ))
-    planet_row_idx = int(math.floor((1 - r_min) * res_r / (r_max - r_min)))
-    # rearange 2D array so that planet sits at the same spot in each image
-    for row_idx, row in enumerate(Σ):
-        first_half = list(row)[:int(planet_col_idx)]
-        second_half = list(row)[int(planet_col_idx):]
-        Σ[row_idx] = np.array(second_half + first_half)
-    # rearange 2D array so that planet sits in the center of plot
-    for row_idx, row in enumerate(Σ):
-        first_half = list(row)[:int(res_φ / 2)]
-        second_half = list(row)[int(res_φ / 2):]
-        Σ[row_idx] = np.array(second_half + first_half)
+    if not 'unp' in sim_id:
+        # get position of planet in disk
+        r_planet, φ_planet = sim_params.planets.current_position_rφ(
+            sim_group, sim_id, iteration_step
+        )
+        # convert position to indices of rows and columns in 2D array
+        planet_col_idx = int(math.floor(φ_planet / (2*π) * res_φ))
+        planet_row_idx = int(math.floor((1 - r_min) * res_r / (r_max - r_min)))
+        # rearange 2D array so that planet sits at the same spot in each image
+        for row_idx, row in enumerate(Σ):
+            first_half = list(row)[:int(planet_col_idx)]
+            second_half = list(row)[int(planet_col_idx):]
+            Σ[row_idx] = np.array(second_half + first_half)
+        # rearange 2D array so that planet sits in the center of plot
+        for row_idx, row in enumerate(Σ):
+            first_half = list(row)[:int(res_φ / 2)]
+            second_half = list(row)[int(res_φ / 2):]
+            Σ[row_idx] = np.array(second_half + first_half)
 
     # plot Σ against r and φ
     r = np.linspace(r_min, r_max, res_r)

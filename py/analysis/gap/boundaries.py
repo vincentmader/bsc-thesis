@@ -6,10 +6,9 @@ import config
 import sim_params
 
 
-M, m, a, e = 1, 1e-3, 1, 0
+def main(r, Σ_2D, search_distance_in_rH, planet_m, planet_a, planet_e):
 
-
-def main(r, Σ_2D, search_distance_in_rH):
+    M, m, a, e = 1, planet_m, planet_a, planet_e
 
     Nrad, Nsec = Σ_2D.shape
     r_min, r_max = r[0], r[-1]

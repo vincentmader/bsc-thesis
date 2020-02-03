@@ -10,5 +10,6 @@ from .sigma_vs_r_and_flaring_idx import main as sigma_vs_r_and_flaring_idx
 from .sigma_vs_r_and_m0 import main as sigma_vs_r_and_m0
 from .sigma_vs_r_and_machida import main as sigma_vs_r_and_machida
 from .sigma_vs_r_and_resolution import main as sigma_vs_r_and_resolution
+from .sigma_vs_r_and_sigma_slope import main as sigma_vs_r_and_sigma_slope
 from .sigma_vs_r_and_viscosity import main as sigma_vs_r_and_viscosity
 

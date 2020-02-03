@@ -16,9 +16,12 @@ WANTED_INITIAL_MASS = 1e-3
 
 
 def main(sim_group, iteration_step):
+
     # TODO: also allow for other sim_groups ?
     if sim_group not in ['frame_rotation']:
         return
+
+    print('  plotting accretion.vs_eccentricity')
 
     # make sure save directory exists
     if sim_group not in os.listdir(FIGURE_DIR):
@@ -27,15 +30,16 @@ def main(sim_group, iteration_step):
     initial_masses, current_masses, initial_eccentricities = [], [], []
     # loop over all sim_ids with initial_mass of 1 M_J
     for sim_id in sorted(os.listdir(os.path.join(FARGO_DIR, sim_group))):
-        if sim_id in ['.DS_Store']:
+        if sim_id in ['.DS_Store'] or 'unp' in sim_id:
             continue
 
         initial_mass = sim_params.planets.initial_mass(sim_group, sim_id)
         current_mass = sim_params.planets.current_mass(sim_group, sim_id, iteration_step)
         initial_eccentricity = sim_params.planets.initial_eccentricity(sim_group, sim_id)
-        if (initial_mass - WANTED_INITIAL_MASS) / initial_mass > 0.05:
+        if abs(initial_mass - WANTED_INITIAL_MASS) / initial_mass >= 0.05:
             continue
 
+        #print(initial_mass, initial_eccentricity)
         initial_masses.append(initial_mass)
         current_masses.append(current_mass)
         initial_eccentricities.append(initial_eccentricity)
@@ -50,13 +54,12 @@ def main(sim_group, iteration_step):
 
     # plot setup
     plt.figure(figsize=(8, 4))
-    plt.title(f'accretion for 1.0 {"$M_{jupiter}$"} planets after {orbit_num} orbits')
-    plt.xlim(min(initial_eccentricities), max(initial_eccentricities))
+    #plt.title(f'accretion for 1.0 {"$M_{jupiter}$"} planets after {orbit_num} orbits')
+    plt.xlim(min(initial_eccentricities) - 0.025, max(initial_eccentricities) + 0.025)
     plt.ylim(.9 * min(planet_mass_increase), 1.1 * max(planet_mass_increase))
     plt.xlabel('eccentricity')
     plt.ylabel(r'planet mass increase $m/m_0$')  # at iteration_step * nr_of_orbits_between_outputs
     plt.xticks(initial_eccentricities)
-    plt.grid(True)
 
     # plot
     plt.scatter(initial_eccentricities, current_masses / initial_masses)

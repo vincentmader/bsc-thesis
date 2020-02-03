@@ -36,6 +36,8 @@ def main(sim_group):
             subplot_idx += 1
 
         # plt.colorbar()
+        if sim_id not in os.listdir(os.path.join(FIGURE_DIR, sim_group)):
+            os.mkdir(os.path.join(FIGURE_DIR, sim_group, sim_id))
         plt.savefig(os.path.join(FIGURE_DIR, sim_group, sim_id, 'sigma_for_various_times.png'))
         plt.close()
 

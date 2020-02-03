@@ -11,7 +11,7 @@ import setup
 import sim_params
 
 
-def main(sim_group, sim_id, out_file_idx, search_distance_in_rH=5):
+def main(sim_group, sim_id, outfile_idx, search_distance_in_rH=5):
     # notify when bullshit files are being given as input
     if sim_group == '.DS_Store' or sim_id == '.DS_Store':
         raise Exception('cannot calculate gap eccentricity for .DS_Store')
@@ -27,10 +27,17 @@ def main(sim_group, sim_id, out_file_idx, search_distance_in_rH=5):
 
     # load gas density from file
     Σ_2D = setup.load_gas_density.sigma_2D(
-        sim_group, sim_id, out_file_idx
+        sim_group, sim_id, outfile_idx
     )
 
-    r_gap_inner, r_gap_outer = analysis.gap.boundaries(r, Σ_2D, search_distance_in_rH)
+    # define current mass, semi-major axis and eccentricity of planet
+    planet_m = sim_params.planets.current_mass(sim_group, sim_id, outfile_idx)
+    planet_a = sim_params.planets.current_position_rφ(sim_group, sim_id, outfile_idx)[0]  # TODO: this is r, not a! correct this
+    planet_e = sim_params.planets.current_eccentricity(sim_group, sim_id, outfile_idx)
+
+    r_gap_inner, r_gap_outer = analysis.gap.boundaries(
+        r, Σ_2D, search_distance_in_rH, planet_m, planet_a, planet_e
+    )
 
     ecc_inner = calc_eccentricity(max(r_gap_inner), min(r_gap_inner))
     ecc_outer = calc_eccentricity(max(r_gap_outer), min(r_gap_outer))
@@ -38,12 +45,12 @@ def main(sim_group, sim_id, out_file_idx, search_distance_in_rH=5):
     return ecc_inner, ecc_outer
 
 
-def calc_eccentricity(semi_major_axis, semi_minor_axis):
-    return np.sqrt(1 - semi_minor_axis**2 / semi_major_axis**2)
+def calc_eccentricity(periapsis, apoapsis):
+    return (periapsis - apoapsis) / (periapsis + apoapsis)
 
 
 if __name__ == '__main__':
     sim_group, sim_id = 'frame_rotation', '1mj_e.00'
-    out_file_idx = 10
-    main(sim_group, sim_id, out_file_idx)
+    outfile_idx = 10
+    main(sim_group, sim_id, outfile_idx)
 

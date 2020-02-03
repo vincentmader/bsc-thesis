@@ -10,9 +10,9 @@ from scipy.optimize import curve_fit
 from plot_collage import get_nr_of_orbits_between_outputs
 
 
-def create_plot_for_1MJ(iteration_step):
+def create_plot_for_1MJ(outfile_idx):
 
-    # get eccentricity and corresponding planet mass after <iteration_step> steps
+    # get eccentricity and corresponding planet mass after <outfile_idx> steps
     planet_masses, eccentricities = [], []
     for i in sorted(os.listdir('../fargo2d1d/frame_rotation')):
         # only compare simulations of 1mj planets with accretion turned on
@@ -24,7 +24,7 @@ def create_plot_for_1MJ(iteration_step):
         with open(planet_file) as fp:
             content = fp.readlines()
         try:
-            m = float(content[iteration_step].split('\t')[5])
+            m = float(content[outfile_idx].split('\t')[5])
         except IndexError:
             continue
         e = float(i.split('e')[-1])
@@ -55,7 +55,7 @@ def create_plot_for_1MJ(iteration_step):
     plt.ylim(.9 * min(planet_mass_increase), 1.1 * max(planet_mass_increase))
 
     plt.xlabel('eccentricity')
-    plt.ylabel(r'planet mass increase $m/m_0$')  # at iteration_step * nr_of_orbits_between_outputs
+    plt.ylabel(r'planet mass increase $m/m_0$')  # at outfile_idx * nr_of_orbits_between_outputs
     plt.xticks(eccentricities)
 
     plt.savefig(f'../figures/{simulation_dir}/acc_vs_e.pdf')
@@ -71,11 +71,11 @@ def create_plot_for_1MJ(iteration_step):
 
 if __name__ == '__main__':
 
-    iteration_step = int(sys.argv[1])
+    outfile_idx = int(sys.argv[1])
     simulation_dir = 'frame_rotation'
 
     nr_of_orbits_between_outputs = get_nr_of_orbits_between_outputs(simulation_dir)
-    total_nr_of_orbits = iteration_step * nr_of_orbits_between_outputs
+    total_nr_of_orbits = outfile_idx * nr_of_orbits_between_outputs
 
-    create_plot_for_1MJ(iteration_step)
+    create_plot_for_1MJ(outfile_idx)
 

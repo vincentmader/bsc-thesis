@@ -17,7 +17,7 @@ def main(sim_group, sim_id, output_idx=None):
     print('\n', sim_id, ' ', end='')
 
     # check whether save directory exists
-    if not sim_id in os.path.join(FIGURE_DIR, sim_group):
+    if not sim_id in os.listdir(os.path.join(FIGURE_DIR, sim_group)):
         os.mkdir(os.path.join(FIGURE_DIR, sim_group, sim_id))
     path_to_sim_id_dir = os.path.join(FIGURE_DIR, sim_group, sim_id)
     if not 'all_gap_plots' in os.listdir(path_to_sim_id_dir):

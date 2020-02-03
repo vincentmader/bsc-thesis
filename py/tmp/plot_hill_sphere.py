@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 # -*- coding: utf8 -*-
 
+import math
 from pprint import pprint
 
 import matplotlib.pyplot as plt
@@ -20,9 +21,8 @@ def plot_hill_sphere(cells_per_rH):
 
     """
 
-    dim = int(2 * (cells_per_rH))
+    dim = int(2. * cells_per_rH)
     shape = (dim, dim)
-    print(cells_per_rH, shape)
 
     arr = np.zeros(shape=shape)
     for row_idx, row in enumerate(arr):
@@ -44,7 +44,7 @@ def plot_hill_sphere(cells_per_rH):
     plt.imshow(arr, cmap='Greys', vmin=0, vmax=2)
 
 
-    if cells_per_rH != int(cells_per_rH):
+    if float(cells_per_rH) != float(math.floor(cells_per_rH)):
         plt.xlim(-1.5, dim + .5)
         plt.ylim(-1.5, dim + .5)
         plt.gca().add_artist(plt.Circle((dim / 2 - .5, dim / 2 - .5), cells_per_rH, color='red', fill=False))

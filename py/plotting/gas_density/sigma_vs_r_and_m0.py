@@ -21,7 +21,7 @@ def sigma_vs_r_and_m0(sim_group, out_file_idx):
 
     sim_ids = [
         f for f in sorted(os.listdir(os.path.join(FARGO_DIR, sim_group)))
-        if f != '.DS_Store'
+        if f != '.DS_Store' and 'unp' not in f
         and sim_params.planets.initial_eccentricity(sim_group, f) == 0
         # TODO: generalize for different masses
     ]
@@ -53,11 +53,13 @@ def sigma_vs_r_and_m0(sim_group, out_file_idx):
 
     plt.xlabel(r'radial distance $r$ [code units]')
     plt.xticks(np.arange(0, r_max + 1, 1))
-    plt.ylabel(r'radially averaged gas density $\Sigma$ [code units]')
+    plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
+    if sim_group in ['frame_rotation']:
+        plt.ylabel('$\Sigma/\Sigma_{unp}$')
     plt.xlim(0.5, r_max)
     #plt.title('radial gas density after mass taper for planet with $e=0$')
     plt.legend(loc='best')
-
+    # save
     save_loc = os.path.join(FIGURE_DIR, sim_group, 'sigma_vs_r_and_m0.pdf')
     plt.savefig(save_loc)
     plt.close()

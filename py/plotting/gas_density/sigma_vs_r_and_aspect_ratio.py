@@ -15,7 +15,7 @@ def main(outfile_idx):
 
     sim_group = 'aspect_ratio'
 
-    fig = plt.figure(figsize=(8, 4))  # 10, 10))
+    fig = plt.figure(figsize=(4, 4))  # 10, 10))
 
     xs, ys = {}, {}
     for sim_id in os.listdir(os.path.join(FARGO_DIR, sim_group)):
@@ -23,7 +23,9 @@ def main(outfile_idx):
             continue
 
         hr = sim_params.general.aspect_ratio(sim_group, sim_id)
-        if hr > 0.2:
+        if hr > 0.1:
+            continue
+        if hr not in np.array(range(1, 11)) / 100:
             continue
 
         out_dir = os.path.join(FARGO_DIR, sim_group, sim_id, 'out')
@@ -50,8 +52,9 @@ def main(outfile_idx):
             color=colors[idx]
         )
     plt.xlabel(r'radial distance $r$ [code units]')
-    plt.ylabel(r'radial density $\lambda$ [code units]')
-    plt.xlim(0.05, 10)
+    plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
+    plt.gcf().subplots_adjust(left=.2)
+    plt.xlim(0.05, 2)
     # plt.ylim(0, 1.1 * max(y))
     plt.legend(loc='lower right')
 
