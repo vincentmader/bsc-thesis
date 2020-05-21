@@ -51,7 +51,7 @@ def main(sim_group):
     #plt.title(f'mass accretion vs. viscosity (after {nr_of_orbits} orbits)')
     plt.xlabel(r'viscosity parameter $\alpha_v$')
     plt.ylabel(r'relative mass increase $m/m_0$')
-    plt.gcf().subplots_adjust(left=0.2)
+    # plt.gcf().subplots_adjust(left=0.2)
 
     mpm0 = current_masses / initial_masses
     plt.scatter(viscosities, mpm0)

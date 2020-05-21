@@ -75,7 +75,7 @@ def main(sim_group, outfile_idx):
     plt.xlim(min(initial_masses) - 0.5e-3, max(initial_masses) + 0.5e-3)
     plt.ylim(1e-3, 6e-3)
     plt.xlabel('initial mass $m_0$')
-    plt.ylabel(r'final planet mass')  # at outfile_idx * nr_of_orbits_between_outputs
+    plt.ylabel(r'absolute planet mass')  # at outfile_idx * nr_of_orbits_between_outputs
     plt.xticks(initial_masses)
     if sim_group == 'frame_rotation':
         plt.gcf().subplots_adjust(left=0.2)

@@ -40,8 +40,6 @@ def main(sim_group):
 
         plt.plot(rs, label='$e_0=' + str(ecc_0) + '$')
 
-
-
     plt.legend()
 
     save_loc = os.path.join(FIGURE_DIR, sim_group, 'planet_pos_vs_t_and_e0.pdf')

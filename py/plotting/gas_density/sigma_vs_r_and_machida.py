@@ -51,7 +51,7 @@ def main(outfile_idx):
     for idx, machida in enumerate(sorted(xs.keys())):
         x, y = xs[machida], ys[machida]
         plt.semilogy(
-            x, y, label=f'Machida factor {machida}',
+            x, y, label=f'acc. factor {machida}',
             color=colors[idx]
         )
     plt.xlabel(r'radial distance $r$ [code units]')

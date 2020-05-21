@@ -58,7 +58,7 @@ def main(sim_group):
         label='with accretion', color='green'
     )
     plt.xlim(3e-5, 1e-1)
-#    plt.ylim(1, 2.2)
+    plt.ylim(0, 1e-3)
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='x')
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
     plt.legend(loc='upper left')

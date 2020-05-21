@@ -32,7 +32,8 @@ def plot(sim_group, outfile_idx):
         planet_idx = np.argmin(abs(rs - 1))
         depth = Σs[planet_idx]
 
-        print(ecc, rs[planet_idx], depth)
+        if sim_group in ['frame_rotation']:
+            depth /= setup.sigma_unp(sim_group, sim_id, outfile_idx)[planet_idx]
 
         eccs.append(ecc)
         depths.append(depth)
@@ -46,6 +47,12 @@ def plot(sim_group, outfile_idx):
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
     plt.xlabel('eccentricity of planet orbit')
     plt.ylabel('azimuthally averaged gas density at $r=1$')
+    if sim_group in ['frame_rotation']:
+        plt.ylabel('$\Sigma/\Sigma_{unp}$')
+        if outfile_idx == 10:
+            plt.ylim(0, 0.4)
+        elif outfile_idx == 50:
+            plt.ylim(0, 0.1)
     plt.gcf().subplots_adjust(left=.15)
 
     save_loc = os.path.join(

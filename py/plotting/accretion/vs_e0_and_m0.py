@@ -17,7 +17,7 @@ def main(sim_group, outfile_idx):
         return
     print('  plotting accretion.vs_e0_and_m0')
 
-    plt.figure(figsize=(4, 4))
+    plt.figure(figsize=(8, 4))
 
     eccs = [0., 0.05, 0.1, 0.15, 0.2, 0.25]
     for mass_in_mJ in [1, 2, 5]:
@@ -33,15 +33,15 @@ def main(sim_group, outfile_idx):
 
         plt.scatter(
             eccs, mpm0s, color=COLORS[mass_in_mJ],
-            label='m=$' + str(mass_in_mJ) + '\ M_{jupiter}$'
+            label='$m_0=' + str(mass_in_mJ) + '\ m_{jupiter}$'
         )
 
     plt.xlim(min(eccs) - 0.025, max(eccs) + 0.025)
     plt.ylim(0.9, 2.8)
-    plt.xlabel('eccentricity of planet orbit')
-    plt.ylabel('relative mass increase $m/m_0$')
+    plt.xlabel('eccentricity $e_{planet}$')
+    plt.ylabel('mass $m/m_0$')
     plt.legend(loc='upper left')
-    plt.gcf().subplots_adjust(left=.15)
+    # plt.gcf().subplots_adjust(left=.15)
 
     save_loc = os.path.join(FIGURE_DIR, sim_group, 'mpm0_vs_e0_and_m0.pdf')
     plt.savefig(save_loc)

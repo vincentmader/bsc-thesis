@@ -23,3 +23,15 @@ def sigma_2D(sim_group, sim_id, outfile_idx):
         FARGO_DIR, sim_group, sim_id, f'out/gasdens{outfile_idx}.dat'
     )
 
+
+def v_rad(sim_group, sim_id, outfile_idx):
+    return os.path.join(
+        FARGO_DIR, sim_group, sim_id, f'out/gasvrad{outfile_idx}.dat'
+    )
+
+
+def v_theta(sim_group, sim_id, outfile_idx):
+    return os.path.join(
+        FARGO_DIR, sim_group, sim_id, f'out/gasvtheta{outfile_idx}.dat'
+    )
+

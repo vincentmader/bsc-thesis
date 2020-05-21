@@ -55,7 +55,7 @@ def main(sim_group):
         label='with accretion', color='green'
     )
     plt.xlim(-0.025, max(initial_eccs_with_acc) + 0.025)
-    #plt.ylim(0, 0.4)
+    plt.ylim(0, 0.45)
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='x')
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
     plt.legend(loc='upper left')

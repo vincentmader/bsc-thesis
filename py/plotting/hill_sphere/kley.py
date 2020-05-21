@@ -36,10 +36,10 @@ def colorplot_fred(r_H, cells_per_rH):
             arr[jdx][idx] = analysis.accretion.kley.f_red(d, r_H)
 
     plt.figure(figsize=(4, 4))
-    plt.imshow(arr, cmap='coolwarm', vmin=0, vmax=2./3)
+    plt.imshow(arr, cmap='coolwarm', vmin=0, vmax=0.67)
     cb = plt.colorbar(fraction=0.046, pad=0.04)
-    #cb.set_label('$f_{red}$')
-    #plt.gcf().subplots_adjust(right=1.5)
+    # cb.set_label('$f_{red}$')
+    plt.gcf().subplots_adjust(right=0.85)
     plt.xlim(-.5, 11.5)
     plt.ylim(-.5, 11.5)
 
@@ -69,7 +69,7 @@ def colorplot_fred(r_H, cells_per_rH):
     )
 
     # save
-    save_loc = os.path.join(FIGURE_DIR, 'hill_sphere_kley_fred_1.pdf')
+    save_loc = os.path.join(FIGURE_DIR, 'hill_sphere_kley_fred_1_pres.pdf')
     plt.savefig(save_loc)
     plt.close()
 
@@ -84,15 +84,17 @@ def lineplot_fred():
     plt.figure(figsize=(4, 4))
     plt.plot(r, f_red)
     plt.xticks([0, 0.25, 0.5, 0.75, 1, 1.25, 1.5])
-    plt.yticks([0, 0.25, 0.5, 0.75])
+    # plt.yticks([0, 0.25, 0.5, 0.75])
+    plt.yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6], [''] * 7)
     plt.xlim(0, 1)
-    plt.ylim(-0.05, .7505)
-    plt.xlabel('distance from planet center in $r_H$')
-    plt.ylabel('$f_{red}$')
+    # plt.ylim(-0.05, .7505)
+    plt.ylim(0, .67)
+    plt.xlabel('$r/r_H$')
+    # plt.ylabel('$f_{red}$', rotation=0)
     plt.gcf().subplots_adjust(left=.2)
     plt.gcf().subplots_adjust(bottom=.175)
 
-    save_loc = os.path.join(FIGURE_DIR, 'hill_sphere_kley_fred_2.pdf')
+    save_loc = os.path.join(FIGURE_DIR, 'hill_sphere_kley_fred_2_pres.pdf')
     plt.savefig(save_loc)
     plt.close()
 

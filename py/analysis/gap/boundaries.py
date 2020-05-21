@@ -24,13 +24,9 @@ def main(r, Σ_2D, search_distance_in_rH, planet_m, planet_a, planet_e):
         Σ_1D = np.array([row[φ_idx] for row in Σ_2D])
 
         # calculate pressure P as function of distance from center r
-        P = get_P(r, Σ_1D)
+        P = analysis.gap.pressure(r, Σ_1D)
         # calculate logarithmic derivative of pressure
         gradLogP = grad(np.log(r), np.log(P))
-
-        # plot gradLogP for debugging
-        # TODO: remove when not needed anymore
-        #plot_gradLogP(φ_idx, gradLogP)
 
         # convert search_distance in Hill radii to code units
         search_distance = search_distance_in_rH * analysis.accretion.hill_radius(
@@ -58,24 +54,7 @@ def main(r, Σ_2D, search_distance_in_rH, planet_m, planet_a, planet_e):
     return r_gap_inner, r_gap_outer
 
 
-def get_P(r, Σ_1D):
-
-    # TODO: generalize for different semi-major axes and aspect ratios
-    G, M, a = 1, 1, 1
-    H = lambda r: r
-    # calculate Kepler frequency
-    # Ω = lambda r, a: np.sqrt(G * M / r**2 * (2 / r - 1 / a))
-    Ω = lambda r, a: np.sqrt(G * M / r**3)
-    # calculate sound velocity
-    c_s = H(r) * Ω(r, a)
-    # calculate pressure
-    P = c_s**2 * Σ_1D
-    # return
-    return P
-
-
 def grad(x, y):  # len(grad(x, y)) = len(x) - 1 = len(y) - 1   !!!
     Δx = np.diff(x)
     Δy = np.diff(y)
     return Δy / Δx
-

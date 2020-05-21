@@ -44,8 +44,9 @@ def main(outfile_idx):
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
     for idx, fidx in enumerate(sorted(xs.keys())):
         x, y = xs[fidx], ys[fidx]
+        tex_flaring_idx = r'$\beta=$'
         plt.semilogy(
-            x, y, label=f'flaring index {fidx}',
+            x, y, label=f'{tex_flaring_idx}{fidx}',
             color=colors[idx]
         )
     nr_of_orbits = outfile_idx * sim_params.general.nr_of_iterations_per_output(sim_group, sim_id)

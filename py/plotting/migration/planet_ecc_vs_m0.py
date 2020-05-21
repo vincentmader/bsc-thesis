@@ -29,7 +29,9 @@ def main(sim_group):
         if not (ecc_0 == 0 and α == 1e-2):
             continue
         # is accretion turned on?
-        acc_on = True if sim_id.split('_')[-1] == 'acc' else False
+        acc_on = sim_id.split('_')[-1] == 'acc'
+        # if acc_on:
+        #     return
         # get ecc after sim is finished
         nr_of_outfiles = sim_params.general.nr_of_outputs(
             sim_group, sim_id
@@ -57,7 +59,7 @@ def main(sim_group):
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='x')
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
     plt.xlim(0, max(initial_masses_with_acc) + 1e-3)
-    #plt.ylim(0, 2.5e-3)
+    plt.ylim(0, 1e-3)
     plt.legend(loc='upper left')
     plt.xlabel('initial planet mass')
     plt.ylabel('final planet eccentricity')

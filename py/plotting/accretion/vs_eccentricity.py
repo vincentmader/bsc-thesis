@@ -59,7 +59,7 @@ def main(sim_group, iteration_step):
     plt.ylim(.9 * min(planet_mass_increase), 1.1 * max(planet_mass_increase))
     plt.xlabel('eccentricity')
     plt.ylabel(r'planet mass increase $m/m_0$')  # at iteration_step * nr_of_orbits_between_outputs
-    plt.xticks(initial_eccentricities)
+    plt.xticks(np.arange(0, 0.35, 0.05))
 
     # plot
     plt.scatter(initial_eccentricities, current_masses / initial_masses)

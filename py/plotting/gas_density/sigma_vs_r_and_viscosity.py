@@ -15,7 +15,7 @@ def main(outfile_idx):
 
     sim_group = 'testing_visc'
 
-    fig = plt.figure(figsize=(4, 4))  # 10, 10))
+    fig = plt.figure(figsize=(8, 4))  # 10, 10))
 
     xs, ys = {}, {}
     for sim_id in os.listdir(os.path.join(FARGO_DIR, sim_group)):
@@ -23,6 +23,8 @@ def main(outfile_idx):
             continue
 
         viscosity = sim_params.planets.gas_disk_viscosity(sim_group, sim_id)
+        if viscosity < 1e-4:
+            continue
 
         out_dir = os.path.join(FARGO_DIR, sim_group, sim_id, 'out')
         λ_file = os.path.join(out_dir, f'gasdens.ascii_rad.{outfile_idx}.dat')
@@ -47,8 +49,8 @@ def main(outfile_idx):
             x, y, label=f'{alpha_v}={viscosity:.0E}',
             color=colors[idx]
         )
-    plt.xlabel(r'radial distance $r$ [code units]')
-    plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
+    plt.xlabel(r'distance from the center $r$')
+    plt.ylabel('average surface density $\Sigma$')
     plt.xlim(0.5, 2)
     # plt.ylim(0, 1.1 * max(y))
     plt.legend(loc='lower right')

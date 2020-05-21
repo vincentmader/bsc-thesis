@@ -13,18 +13,19 @@ import sim_params
 
 def main(sim_group):
 
-    if sim_group not in ['frame_rotation']:
+    if sim_group not in ['frame_rotation', 'migration']:
         return
     print('  comparison_for_3_different_times')
 
     for sim_id in sorted(os.listdir(os.path.join(FARGO_DIR, sim_group))):
         if sim_id in ['.DS_Store']:
             continue
+        # print(sim_id)
 
         plt.figure(figsize=(16, 7))
 
         subplot_idx = 1
-        for outfile_idx in [1, 10, 50]:
+        for outfile_idx in [1, 10, sim_params.general.nr_of_outputs(sim_group, sim_id)]:
 
             ax = plt.subplot(1, 3, subplot_idx, projection='polar')
             plotting.gas_density.polar_2D(

@@ -68,15 +68,25 @@ def nr_of_iterations(sim_group, sim_id):
         return 50000
     elif sim_group in [
         'frame_rotation', 'testing_visc', 'machida', 'sigma_slope',
-        'flaring_idx', 'aspect_ratio', 'migration'
+        'flaring_idx', 'aspect_ratio',
     ]:
         return 2500
+    elif sim_group == 'migration':
+        return 2000
+    elif sim_group == 'presentation_500_orbits':
+        return 500
+    elif sim_group == 'presentation_5000_orbits':
+        return 5000
     # TODO: generalize
 
 
 def nr_of_iterations_per_output(sim_group, sim_id):
     if sim_group in ['50000_orbits']:
         return 250
+    elif sim_group in ['presentation_500_orbits']:
+        return 1
+    elif sim_group in ['presentation_5000_orbits']:
+        return 10
     else:
         return 50
     # TODO: generalize

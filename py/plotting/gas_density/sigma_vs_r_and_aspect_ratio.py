@@ -14,6 +14,7 @@ import sim_params
 def main(outfile_idx):
 
     sim_group = 'aspect_ratio'
+    print('  plotting.gas_density_sigma_vs_r_and_aspect_ratio')
 
     fig = plt.figure(figsize=(4, 4))  # 10, 10))
 
@@ -24,6 +25,8 @@ def main(outfile_idx):
 
         hr = sim_params.general.aspect_ratio(sim_group, sim_id)
         if hr > 0.1:
+            continue
+        if hr not in [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09]:
             continue
         if hr not in np.array(range(1, 11)) / 100:
             continue
@@ -46,16 +49,16 @@ def main(outfile_idx):
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
     for idx, hr in enumerate(sorted(xs.keys())):
         x, y = xs[hr], ys[hr]
-        hr_tex = r'$H/R$'
+        hr_tex = r'$h_r$'
         plt.semilogy(
             x, y, label=f'{hr_tex}={hr}',
             color=colors[idx]
         )
     plt.xlabel(r'radial distance $r$ [code units]')
     plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
-    plt.gcf().subplots_adjust(left=.2)
     plt.xlim(0.05, 2)
     # plt.ylim(0, 1.1 * max(y))
+    plt.gcf().subplots_adjust(left=.2)
     plt.legend(loc='lower right')
 
     save_loc = os.path.join(FIGURE_DIR, sim_group, 'sigma_vs_r_and_hr.pdf')

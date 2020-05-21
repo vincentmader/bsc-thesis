@@ -24,7 +24,7 @@ def get_2D_res(sim_dir, sim_id):
             return (404, 2537)
 
     elif sim_dir in ['frame_rotation', 'testing_visc']:
-        if sim_id in ['1.0mj_e.250', '1.0mj_e.300']:
+        if sim_id in ['1.0mj_e.250', '1.0mj_e.275', '1.0mj_e.300']:
             return (404, 909)
         elif 'unp' in sim_id:
             return (404, 404)
@@ -37,6 +37,12 @@ def get_2D_res(sim_dir, sim_id):
     elif sim_dir in ['migration']:
         if sim_id == 'unp':
             return (404, 404)
+        else:
+            return (202, 456)
+
+    elif sim_dir in ['50000_orbits']:
+        if sim_id in ['unp']:
+            return (404, 202)
         else:
             return (202, 456)
 

@@ -9,6 +9,7 @@ import numpy as np
 from config import FARGO_DIR, FIGURE_DIR
 import plotting
 import sim_params
+import setup
 
 
 def plot_mpm0_vs_t(sim_group, sim_id, label, color, set_lims=False):
@@ -51,7 +52,7 @@ def plot_mdot_vs_t(sim_group, sim_id, label, color, set_lims=False):
 
     mass = [float(row.split('\t')[5]) for row in content]
     t = np.linspace(0, total_nr_of_orbits, len(mass))
-    acc_rate = np.diff(mass) / np.diff(t)
+    acc_rate = np.diff(mass) / np.diff(t) / sim_params.general.nr_of_iterations_per_output(sim_group, sim_id)
 
     accretion_start_orbit_num = sim_params.general.accretion_start_time_in_orbits(sim_group, sim_id)
     plt.xlim(accretion_start_orbit_num, total_nr_of_orbits)
@@ -78,7 +79,9 @@ def create_plot_for_single_sim(sim_group, sim_id):
 
     plt.figure(figsize=(8, 4))
     plt.xlabel('number of orbits since simulation start')
+    plt.xlabel('$t$ [orbits]')
     plt.ylabel(r'relative mass increase $m/m_0$')
+    plt.ylabel(r'$m/m_0$')
 
     # plots for relative mass increase m/m0
     plot_mpm0_vs_t(sim_group, sim_id, label, color='black')
@@ -90,7 +93,9 @@ def create_plot_for_single_sim(sim_group, sim_id):
     # plots for accretion rate (m_i - m_j, i=j+1)
     plt.figure(figsize=(8, 4))
     plt.xlabel('number of orbits since simulation start')
+    plt.xlabel('$t$ [orbits]')
     plt.ylabel(r'relative mass increase $m/m_0$')
+    plt.ylabel(r'$m/m_0$')
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
 
     plot_mdot_vs_t(sim_group, sim_id, label, color='black')
@@ -113,7 +118,9 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
     figsize = (4, 4)
     plt.figure(figsize=figsize)
     plt.xlabel('number of orbits since simulation start')
+    plt.xlabel('$t$ [orbits]')
     plt.ylabel(r'relative mass increase $m/m_0$')
+    plt.ylabel(r'$m/m_0$')
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
 
     label, info_text = '', ''
@@ -137,6 +144,8 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
         if compare_by == 'mass':
             label = f'{r"m="}{initial_planet_mass:.4f}'  # TODO: change to .4f ?
             info_text = r'$e=' + str(initial_planet_eccentricity) + r'$'
+            # if initial_planet_mass % 1e-3 != 0:
+            #     continue
         elif compare_by == 'ecc':
             label = f'{r"e="}{initial_planet_eccentricity:.3f}'
             info_text = r'$m_0=' + str(initial_planet_mass * 1000) + r'\ M_{jupiter}$'
@@ -146,6 +155,7 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
             set_lims = True if idx == 0 else False
 
         plot_mpm0_vs_t(sim_group, sim_id, label, color=colors[idx], set_lims=set_lims)
+        # plt.gcf().subplots_adjust(left=.2)
 
     #plt.title(f'relative mass increase for planets with {info_text}')
 #    if compare_by == 'mass' or sim_group == '50000_orbits':
@@ -172,7 +182,9 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
     figsize = (4, 4)
     plt.figure(figsize=figsize)
     plt.xlabel('number of orbits since simulation start')
+    plt.xlabel('$t$ [orbits]')
     plt.ylabel(r'mass accretion rate $\dot m$ [code units]')
+    plt.ylabel(r'$\dot{m}$ [solar masses per orbit]')
     plt.gca().ticklabel_format(style='sci', scilimits=(0, 0), axis='y')
 
     # accretion rate
@@ -186,10 +198,15 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
         initial_planet_eccentricity = sim_params.planets.initial_eccentricity(sim_group, sim_id)
 
         if compare_by == 'mass':
-            label = f'{r"m="}{initial_planet_mass:.4f}'  # TODO: change to .4f ?
+            m_in_mj = initial_planet_mass * 1000
+            plt.xlim(0, 1e-6)
+            tmp = r"$m_{j}$"
+            label = f'{r"$m_0=$"}{m_in_mj:.1f}{tmp}'
             info_text = r'$e=' + str(initial_planet_eccentricity) + r'$'
+            # if initial_planet_mass % 1e-3 != 0:
+            #     continue
         elif compare_by == 'ecc':
-            label = f'{r"e="}{initial_planet_eccentricity:.3f}'
+            label = f'{r"e$=$"}{initial_planet_eccentricity:.3f}'
             info_text = r'$m_0=' + str(initial_planet_mass * 1000) + r'\ M_{jupiter}$'
 
         set_lims = True
@@ -197,28 +214,34 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
             set_lims = True if idx == 0 else False
 
         plot_mdot_vs_t(sim_group, sim_id, label, color=colors[idx], set_lims=set_lims)
+        # plt.gcf().subplots_adjust(left=.2)
 
     #plt.title(f'accretion rate for planets with {info_text}')
 #    if compare_by == 'mass':
 #        plt.legend(loc='lower right')
 #    if sim_group == '50000_orbits':
-    plt.legend(loc='upper right')
 
     save_loc = os.path.join(FIGURE_DIR, sim_group, f'dotm_vs_t_and_{compare_by}.pdf')
     plt.savefig(save_loc)
+
+    plt.legend(loc='upper right')
+    save_loc = os.path.join(FIGURE_DIR, sim_group, f'dotm_vs_t_and_{compare_by}_2.pdf')
+    plt.savefig(save_loc)
+
     if sim_group in ['50000_orbits']:
         plt.yscale('log')
-        plt.ylim(1e-8, 1e-6)
+        plt.ylim(6e-11, 5e-9)
         plt.gcf().subplots_adjust(left=.175)
         plt.savefig(f'{FIGURE_DIR}/{sim_group}/dotm_vs_t_and_{compare_by}_log.pdf')
 
     # compare radial gas profile for times of equal accretion rates
     if sim_group in ['frame_rotation'] and compare_by == 'mass':
+        plt.gca().get_legend().remove()
         save_loc = os.path.join(FIGURE_DIR, sim_group, f'dotm_vs_t_and_{compare_by}_1.pdf')
         plt.savefig(save_loc)
 
         x = np.linspace(0, 2500, 2)
-        y = [3e-7] * len(x)
+        y = [3e-7 / 50] * len(x)
         plt.plot(x, y, color='black')
 
         save_loc = os.path.join(FIGURE_DIR, sim_group, f'dotm_vs_t_and_{compare_by}_2.pdf')
@@ -231,21 +254,50 @@ def create_comparison_plot(sim_group, sim_ids, compare_by):
         plt.savefig(save_loc)
         plt.close()
 
-        plt.figure(figsize=(8, 4))
+        plt.figure(figsize=(4, 4))
+        plt.ylim(1e-2, 2)
         for idx, nr_of_orbits in enumerate([1750, 1300, 850]):
             sim_id = ['0.5mj_e.000', '1.0mj_e.000', '1.5mj_e.000'][idx]
             mass = float(sim_id.split('m')[0])
             outfile_idx = nr_of_orbits // 50
             plotting.gas_density.logarithmic_1D(
                 plt.gca(), sim_group, sim_id, outfile_idx,
-                color=['blue', 'green', 'red'][idx],
-                label=f'm={mass} {r"$m_{jupiter}$"} after {nr_of_orbits} orbits'
+                color=colors[idx],
+                label=f'$m_0=${mass} {r"$m_{j}$"} at $t=${nr_of_orbits} orbits'
             )
+            # calc mass in Hill sphere
+            mass_in_hill_sphere = 0
+            Σ = setup.load_gas_density.sigma_2D(sim_group, sim_id, outfile_idx)
+            r, φ = sim_params.planets.current_position_rφ(sim_group, sim_id, outfile_idx)
+            res_r, res_φ = sim_params.resolution.get_2D_res(sim_group, sim_id)
+            r_min = sim_params.radial_boundaries.r_min_2D(sim_group, sim_id)
+            r_max = sim_params.radial_boundaries.r_max_2D(sim_group, sim_id)
+            φp = int(round(φ / (2*np.pi) * res_φ))
+            if φp < 0:
+                φp += res_φ
+            rp = int(round(r / (r_max - r_min) * res_r))
 
+            d = {
+                0: 5,
+                1: 5,
+                2: 4,
+                3: 4,
+                4: 2,
+                5: 2,
+            }
+
+            for row_idx in range(rp - 5, rp + 6):
+                for col_idx in range(φp - d[abs(rp - row_idx)], φp + d[abs(rp - row_idx)]):
+                    mass_in_hill_sphere += Σ[row_idx][col_idx]
+
+            print(sim_id, mass_in_hill_sphere)
+
+        plt.gcf().subplots_adjust(left=.2)
         plt.xlabel('radial distance $r$ [code units]')
-        plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
+        # plt.ylabel('azimuthally averaged surface density $\Sigma$ [code units]')
+        plt.ylabel('$\Sigma/\Sigma_{unp}$')
         plt.legend(loc='lower right')
-        plt.xlim(0.2, 5)
+        plt.xlim(0.2, 2)
 
         save_loc = os.path.join(FIGURE_DIR, sim_group, f'sigma_vs_r_for_same_acc_rates.pdf')
         plt.savefig(save_loc)
@@ -278,7 +330,7 @@ def main(sim_group):
         ecc = sim_params.planets.initial_eccentricity(sim_group, sim_id)
         if ecc >= .25:
             continue
-        if ecc == 0.05 and sim_group == '50000_orbits':
+        if sim_group == '50000_orbits' and ecc % 0.1 != 0:
             continue
         # check whether initial mass is equal to mass_for_comparison_plot
         initial_mass = sim_params.planets.initial_mass(sim_group, sim_id)

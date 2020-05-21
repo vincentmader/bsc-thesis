@@ -47,7 +47,7 @@ def main(sim_group):
         # TODO: generalize
         plt.ylim(0.8, 2.2)
     #plt.title(f'mass accretion vs. Machida accretion factor after {iteration_step} orbits')
-    plt.xlabel(r'Machida accretion factor')
+    plt.xlabel(r'accretion factor')
     plt.ylabel(r'relative mass increase $m/m_0$')
 
     mpm0 = current_masses / initial_masses

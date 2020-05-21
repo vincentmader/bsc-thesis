@@ -56,7 +56,7 @@ def testing_cells_per_rH():
     a = 1
     e = 0
     r_min = .2
-    r_max = 3
+    r_max = 5
 
     print(f'{M = }, {m = }, {a = }, {e = }, {r_min = }, {r_max = }')
 

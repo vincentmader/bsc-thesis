@@ -57,10 +57,11 @@ def main(sim_group, outfile_idx):
     plt.figure(figsize=(4, 4))
     #plt.title(f'accretion for 1.0 {"$M_{jupiter}$"} planets after {orbit_num} orbits')
     plt.xlim(min(aspect_ratios) - 0.01, max(aspect_ratios) + 0.01)
-    plt.ylim(0, 4)
+    plt.ylim(1, 3.2)
     plt.xlabel('aspect ratio')
     plt.ylabel(r'planet mass increase $m/m_0$')  # at outfile_idx * nr_of_orbits_between_outputs
-    plt.xticks(aspect_ratios)
+    plt.xticks([0.02, 0.04, 0.06, 0.08, 0.1])
+    plt.gcf().subplots_adjust(left=.15)
 
     # plot
     plt.scatter(aspect_ratios, current_masses / initial_masses)
