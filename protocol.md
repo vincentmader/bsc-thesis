@@ -278,14 +278,68 @@ Thu, 2019-12-19, Day 034
 Fri, 2019-12-20, Day 035
 ------------------------
 
-Thu, 2020-01-18, Day 036
+Thu, 2020-01-09, Day 036
 ------------------------
   * stuff that I did during the holidays:
     * plot 1D gas density vs. radial distance after tapering has finished
     * write function to calculate gap eccentricity from gap boundaries
 
+...
 
+Mon, 2020-01-20, Day 043
+------------------------
+  * meet with Bertram in the morning
+  * FP in the afternoon
 
+Tue, 2020-01-21, Day 043
+------------------------
+  * FP
+
+Wed, 2020-01-22, Day 043
+------------------------
+  * FP
+
+Thu, 2020-01-24, Day 043
+------------------------
+  * group meeting 
+  * write introduction
+
+Fri, 2020-01-24, Day 044
+------------------------
+  * continue with introduction
+
+Mon, 2020-01-27, Day 044
+------------------------
+
+Tue, 2020-01-28, Day 044
+------------------------
+
+Wed, 2020-01-29, Day 044
+------------------------
+
+Thu, 2020-01-30, Day 044
+------------------------
+  * group meeting
+
+Fri, 2020-01-31, Day 044
+------------------------
+  * make plot for evolution of disk (3 polar plots)
+  * make plot for resolution (3 polar plots), make them look niccce
+
+Mon, 2020-02-03
+------------------------
+  * meet with Bertram
+  * make captions 
+  * make plots nicer to look at (fix cut-off ylabels and similar things)
+  * make plot for eccentricity vs. time (migrating planet)
+  * make plots for gap with sigma / sigma unp (frame rotation, 2500 orbits)
+    vs eccentricity
+
+... I kinda stopped using this
+
+Thu, 2020-02-13
+-----------------------
+  * finished writing the BA, will hand it in tomorrow
 
 
 
@@ -303,12 +357,19 @@ QUESTIONS
 
 TODO
 
+  * compare σ with σunp (unperturbed)
+    * run with higher resolution (factor 2 on both N_rad and N_sec)
+      * for all H/R, visc, flaring index
+    * maybe compress into grid with lower res
+
   * in total vary e, m0, α, H/R, Machida factor, density profile
     * for density profile look into paper Crida 2006
 
     * e (initial eccentricity of planet orbit)
-      * (DONE) plot final planet mass vs. eccentricity
+      * plot final planet mass vs. eccentricity
         * do this for e >= 0.3
+          * run with higher resolution (factor 2 on both N_rad and N_sec)
+          * maybe compress into grid with lower res
       * (?) plot accretion rate vs. eccentricity
         * fix y-scale
 
@@ -332,11 +393,7 @@ TODO
 
     * planet core mass
       * earlier sims were run with 33% mass in core, 10-15% is more realistic
-      -> show that it does not make a big difference
-
-  * compare σ with σunp (unperturbed)
-    * run simulation without planet, why not working atm?
-    * do all analysis with σ/σunp
+      -> maybe: show that it does not make a big difference
 
   * compare gap for different values of e and m0
     * calculate gap eccentricity
@@ -350,13 +407,10 @@ TODO
   * for dm/dt vs e and m/m0 vs t: const. multiplicative factor between curves?
   * look at radial center of mass, evolution, moves outwards ?
 
-  * (DONE) make python config/info file, where parameters can be imported from
-
   * plots: make consistent
     * same number of digits after comma for m0 and e
     * axis ticks in scientific mode
-
-  * what is going on in the center of the grid?
+    * better/more detailed plot captions
 
 MAYBE:
 
@@ -366,4 +420,48 @@ MAYBE:
     * compare spiral arms (?)
     * look into turbulences at gap edge (Kelvin-Helmholtz instabilities)
       * these vary with planet mass (-> gap width) and disk viscosity
+
+
+
+
+introduction: motivation: accretion and gas giants
+discussion: was ist wichtig?
+
+plots für mpm0 und m gegen t/m0
+
+gap plotten für punkte gleicher acc. raten (für e und m0)
+für verschiedene T gap plotten für e=[0, 0.2], auch für langzeitentw.
+gap: nach 500 und 2500
+
+sehr kleine alpha -> numerische visk. könnte dominieren
+-> entweder höhere auflösung oder rausschmeißen
+
+visc log, verhältnisse (faktor 3 visc erhöhung -> faktor 3 mpm0-1 erhöhung?)
+
+gap ecc (für acc start)
+
+accretion vs. flaring index (mpm0=1.4 für fidx=0, vergleich mpm0 vs. m0?)
+
+resolution tests for accurate ratio of N_rad/N_sec, for more values of N_c/rH
+
+cite Hubert Klahr and Cornelis Dullemond
+
+
+!!! Projektpraktikum und BA im Sekretarit anmelden
+!!! Korrekteur finden (Klahr oder Dullemond, Mail schreiben) -> Bertram sagen
+
+für Gap-Struktur bei Zeiten gleicher Akk.-rate:
+  - Gesamtmasse im Hill-Radius ausrechnen (überall gleich?)
+  - Gesamtmasse vllt gewichten mit Akk.-Glättungs-Funktion
+  - momentane Masse in Legende dazuschreiben
+
+
+migration: 
+  - nochmal machen, mit Feels Disk an!
+  - final ecc vs initial mass für e=[0, 0.2]
+  - ecc & semimajor axis vs. t, jeweils
+  - welchen Einfluss hat Akkretion auf Migration?
+  - rφ-plots von sigma, vergleich
+
+
 

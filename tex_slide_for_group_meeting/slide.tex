@@ -1,0 +1,64 @@
+\documentclass[10 pt]{beamer}
+
+
+%\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{hyperref}
+%\usepackage{siunitx}
+\usepackage{subfig}
+%\usepackage[utf8]{inputenc}
+%\usepackage{xcolor}
+
+\setbeamertemplate{navigation symbols}{}
+\graphicspath{{../figures/}}
+%\sisetup{separate-uncertainty}
+
+%% redefine paragraph to include newline after headline
+%\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{} \}
+%% redefine \vec command to have bold vectors
+%\let\vec\mathbf
+%% define text color commands
+%\newcommand{\red}[1]{\textcolor{red}{#1}}
+%\newcommand{\green}[1]{\textcolor{green}{#1}}
+%\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+
+\begin{document}
+  \begin{frame}
+
+    \frametitle{Vincent Mader}
+
+    \begin{itemize}
+      \item doing Bachelor thesis under supervision of Bertram
+      \item numerical simulations of planets on eccentric orbits with 
+        FARGO2D1D algorithm \\
+        $\Rightarrow$ how does eccentricity influence accretion 
+        rate and gap structure?
+    \end{itemize}
+
+    \begin{figure}[h!]
+      \centering
+%      \begin{minipage}{.33\framewidth}
+%        \centering
+%        \subfloat[]{
+%          \includegraphics[scale=.33]{frame_rotation/1.0mj_e.000/gas_dens_polar_out50.png}
+%        }
+%      \end{minipage}%
+      \begin{minipage}{.5\framewidth}
+        \centering
+        \subfloat[radial gap structure for \\ various eccentricities]{
+          \includegraphics[scale=.5]{frame_rotation/sigma_vs_r_and_e0_2500}
+        }
+      \end{minipage}%
+      \begin{minipage}{.5\framewidth}
+        \centering
+        \subfloat[relative mass increase for various \\ \ \ \ eccentricities and planet masses]{
+          \includegraphics[scale=.5]{frame_rotation/mpm0_vs_e0_and_m0}
+        }
+      \end{minipage}
+    \end{figure}
+
+  \end{frame}
+\end{document}
+
+

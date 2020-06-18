@@ -1,0 +1,997 @@
+\chapter{Introduction}
+
+  \pagenumbering{arabic} 
+  \setcounter{page}{1} % TODO: make sure this is set correctly
+
+  \section{Historical Context}
+
+%    \red{For a long time, planets have been objects of interests for mankind.} \\
+%    \\
+    As early as the time of the ancient Babylonian civilization, several 
+    bright objects could be distinguished from the rest of the the night sky. 
+    In contrast to the stars, which on human timescales constitute a relatively
+    static background, these objects seemed to exhibit independent motion 
+    across 
+    the sky. This explains why the word we use today to describe these objects 
+    is \textit{planet}, which has its origin in the ancient Greek 
+    \textit{planetes}, literally meaning "wanderer".
+    It was observed that every now and then, the movement of these sources of 
+    light seemed to stop and then reverse for a while. Nowadays, we of course 
+    know that this behavior is explained by the planets' 
+    independent motion around the Sun. Although it was suggested that the Earth 
+    does not make up the center of the universe relatively early, e.g. by
+%    the Pythagoreans in the third century B.C.E. as well as by 
+    Aristarchus of Samos in the third century B.C.E., 
+    this was not a widely accepted fact until relatively recent times. \\
+    \\
+%
+%    Although a heliocentric model of the 
+%    universe was suggested 
+%
+%    Pythagoreans 
+%
+    Up until the Renaissance, the widespread world view followed a model most 
+    notably suggested by the Greek polymath Ptolemy, who argued for a geocentric 
+    universe, where the Sun, planets and stars all orbit the Earth. Each of 
+    the orbiting planets was thought to additionally travel on a so-called 
+    epicycle, which helped explain the fact that the observed planets did not 
+    always travel in the same direction in the sky as seen from Earth. \\
+    \\
+    Due to their low apparent magnitudes, the planets Mercury, Venus, Mars, 
+    Jupiter and Saturn can be observed from Earth with the naked eye. Thus, 
+    they were known to most historic societies with any interest in astronomy.
+    Not being able to explain their origin, humans in civilizations all over 
+    the world tried to give these mysterious sources of light meaning by 
+    incorporating them into their stories, mythologies and religions. \\
+    \\
+%    The six inner planets were known to man since ancient times (even though 
+%    Earth was not regarded as residing in the same category as the others).
+%    Their low apparent magnitudes makes them visible from Earth without 
+%    any help from telescopes. \\
+%    \\
+%    The planets' true nature could not be explained\red{...}, so people 
+%    tried to give them meaning in their stories. Thus, they played a role in the
+%    religion and mythology of many different civilizations across the globe.
+%    \\
+    It would take almost two millenia before the heliocentric model of the solar 
+    system gained widespread attention. In the 16th century, the Polish 
+    polymath Nicolaus Copernicus formulated a model of the universe
+    with the Sun at its center and the planets traveling around it on 
+    concentric circles. 
+    Eventually, the observations of Mars' orbit done 
+    by Johannes Kepler and his mentor Tycho Brahe lead to a new empirical
+    description of the motions of astronomical bodies that improved on the 
+    model of Copernicus, known to us today as Kepler's laws. Among other 
+    things, Kepler realized that the planets move around the sun not on circles,
+    but on ellipses, with the Sun positioned at one of the foci. \\
+    \\
+    These observations would lead Isaac Newton to formulate his theory of 
+    gravity together with his laws of motion
+    which, it could be argued, marked the start of the scientific 
+    revolution that would take place in the following centuries. 
+%    After 
+%    stating his three laws of motion, he formulated a law of gravity, which 
+%    which can be expressed as 
+%    \begin{equation}
+%      \vec F_G=G\cdot\frac{m_1\cdot m_2}{|\vec r_1-\vec r_2|^2}\cdot 
+%      \frac{\vec r_1-\vec r_2}{|\vec r_1-\vec r_2|}
+%    \end{equation}
+%    It quantifies the gravitational force $F_G$ acting between any two bodies 
+%    with masses $m_1$ and $m_2$ and position vectors $\vec r_1$ and $\vec r_2$.
+%    The proportionality constant $G$ is also known as Newton's gravitational 
+%    constant. 
+    He recognized that a simple inverse square law suffices to predict 
+    the motions of the astronomical bodies in a relatively accurate way.
+    Additionally, he noticed that this
+    same law held true not only for the planets, but also for any falling 
+    object here on Earth. 
+    % This can be regarded as the discovery of the first scientific law. 
+
+    \newpage \noindent
+    The new heliocentric world view provided a lot of new questions in need of 
+    answers during the following centuries. Are all stars actually suns like 
+    our own, only much farther away? Could there be planets orbiting those 
+    stars and could those planets look like our own home planet, possibly 
+    even with their own unique life forms and evolutionary histories? \\
+    \\
+    An attempt to explain the origin of the Solar System was made in the 18th
+    century in part by Immanuel Kant and Pierre-Simon Laplace in their
+    % TODO: how much citing in historical context? ask Bertram
+    \textit{nebular hypothesis}, in which they
+    argued for the former existence of a giant gas cloud. Slowly rotating,
+    this cloud was suspected to have collapsed and subsequently flattened out
+    due to its own gravitaty. Later on, the Sun and the planets were thought 
+    to have emerged from the gas. \\
+    \\
+    After the invention of the first (semi-)modern telescopes by 
+    Galileo and Newton, the following centuries saw the discoveries of more 
+    planets in our own solar system.
+    First Uranus in the late 1700s, then Neptune a century later, bringing the 
+    number of known planets in our solary system to eight.
+    The discovery of Pluto and later many other objects of the same size in the 
+    outer solar system prompted the \textit{International Astronomical Union} to 
+    formally define the term \textit{planet} in 2006 \cite{IAU_planet_def}.
+    For any object in the Solar System to be classified as a planet, it has to
+    \begin{enumerate}
+      \setlength{\itemsep}{2pt}%
+      \setlength{\parskip}{0pt}%
+      \item be in direct orbit around the Sun
+      \item possess a mass large enough to assume a nearly round shape due 
+        to self-gravitation
+      \item have cleared its orbit of any larger or similarly-sized bodies
+    \end{enumerate}
+    With continuing scientific and technological progress, telescope resolution 
+    improved drastically, increasing the distance at which astronomical 
+    bodies could be observed. Larger and more 
+    accurate telescopes, as well as the eventual possibility of launching 
+    these telescopes into orbit made the discovery of extrasolar planets 
+    feasible. The first discovery of such an exoplanet was confirmed by
+    \citeauthor{Wolszczan_1992} (\citeyear{Wolszczan_1992}) 
+    % \cite{first_exoplanet_discovered} 
+    with about 5000 having been observed since then, most 
+    notably by the \textit{Kepler Space Telescope}, with which alone about 2600
+    planets could be detected. The first direct observation of a 
+    nascent proto-planet inside a proto-planetary disk was reported in 2018,
+    after the exoplanet \textit{PDS 70b} was imaged using ESO's 
+    \textit{Very Large Telescope} (\citeauthor{Keppler_2018},
+    \citeyear{Keppler_2018}).
+    \\
+    \\
+    These recent observations show that planets are very abundant. 
+    There might be more stars with an own 
+    planetary system than without, as has been stated in a 2018 article by 
+    NASA \cite{more_stars_with_planets_than_without}.
+    Observations by e.g. \citeauthor{Petigura_2013} 
+    (\citeyear{Petigura_2013}) indicate that a significant portion of 
+    stars is accompanied by Earth-sized planets 
+    % with orbital periods similar 
+    % to that of the Earth.
+    inside the Goldilocks zone, where liquid water can exist in a stable 
+    form and therefore one of the basic requirements for life is fulfilled.
+    Extrapolating from these observations, it is possible that there could up 
+    to 40 billion Earth-like planets in the Milky Way alone. \\
+    \\
+    The mass of observed planets ranges from about twice that of the Moon 
+    to about 30 times that of Jupiter
+    \footnote{Deuterium burning starts at about 13 Jupiter masses, making these 
+    larger objects brown dwarfs.}, thus spanning multiple orders of 
+    magnitude. 
+    Planetary compositions depend largely on their size.
+    Most modern planetary formation theories assume an initial buildup of a 
+    central rocky core. From there the planet evolves either into an Earth-like 
+    terrestrial planet or into a gaseous giant similar to Jupiter
+    (\citeauthor{Pollack_1996}, \citeyear{Pollack_1996} and 
+    \citeauthor{Kley_1999}, \citeyear{Kley_1999}). \\
+    \\
+    % \red{Rogue planets: might be more rogue planets than stars in the Milky Way 
+    % \cite{cite}.}
+    % \red{...} \\
+    % \\
+    The processes underlying planet formation are yet to be fully explained. 
+    Accurate modeling requires an understanding of many different 
+    aspects of the natural sciences, including but not limited to 
+    magneto-hydro-dynamics, chemistry, gravity (N-body-dynamics), 
+    thermodynamics, radiative transfer and coagulation physics. Due to temporal 
+    constraints and the complexity of the topic, this bachelor's thesis can 
+    only cover a small portion of what there is to be said about this 
+    % interesting and 
+    active field of study.
+%    \\ \\
+%    \red{The following sections are an attempt to convey the essentials of 
+%    the physical model which is used in this thesis to model a proto-planetary
+%    disk}
+%    \begin{itemize}
+%      \item formation of solar systems/planets not entirely understood yet
+%        $\Rightarrow$ active field of study, complex topic 
+%        (gravity, magneto-hydro-dynamics, material science (?), ...)
+%      \item temporal limits, this bachelor's thesis can only cover a tiny portion 
+%        of what there is to be said about this complex and actively evolving field 
+%        of study
+%      \item this work utilizes construct a highly simplified model of a 
+%        proto-planetary disk (2D) with the help of computer simulations 
+%        (FARGO2D1D). it is assumed that a ... planet has already formed 
+%        (circumventing problem of early accretion, cite) that is orbiting a central 
+%        proto star
+%      \item the evolution of the planet is obviously greatly 
+%        influenced/characterized by the rate of mass accretion. 
+%      \item variation of disk and planet parameters $\Rightarrow$
+%        influence on evolution of planet
+%    \end{itemize}
+  
+  %\section{\red{Prerequisites}}
+  %  \subsection{Classical Gravity}
+  %    
+  %    \paragraph{Kepler's Laws}
+
+  %      \begin{itemize}
+  %        \item formulated by Johannes Kepler between 1609 and 1619 
+  %        \item empirical laws from studies of Tycho Brahe's observational data
+  %        \item first two laws were published in 1609, \textit{Astronomia Nova}
+  %          \begin{enumerate}
+  %            \item A planet travels around its parent star on an ellipse.
+  %            \item The planet sweeps out equal areas in equals times 
+  %          \end{enumerate}
+  %        \item additionally, Kepler regognized that neither velocity nor 
+  %          angular velocity are constant, but area velocity is 
+  %          (closely related to angular momentum)
+  %        \item ellipses are conical sections, characterized by the equation
+  %          \begin{equation}
+  %            \frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\ \ \ \ \ \textnormal{with }a>b
+  %          \end{equation}
+  %        \item ellipse characterized by two numbers 
+  %          ($a$ \& $b$ or one axis and $e$)
+  %        \item Earth's orbit has an eccentricity of about $0.017$
+  %          \begin{equation}
+  %            e=\sqrt{1-\frac{b^2}{a^2}}
+  %          \end{equation}
+  %        \item \red{give equation for trajectory}
+  %        \item circles can be seen as special cases of ellipses, or as a
+  %          separate class of conical section
+  %        \item can also be parabolas or hyperbolas ($e=1$ or $e\geq1$)
+  %        \item third law published in 1619
+  %        \item square of the orbital period of a planet is directly 
+  %          proportional to the cube of the semi-major axis of its orbit.
+  %      \end{itemize}
+
+  %    \paragraph{Newton's Law of Gravitation}
+  %      \begin{itemize}
+  %        \item published in Isaac Newton's famous $Principia$
+  %        \begin{equation}
+  %          \vec{F}=G\cdot\frac{m_1\cdot m_2}{|\vec{r}_2-\vec{r}_1|^2}\cdot
+  %          \frac{\vec{r}_2-\vec{r}_1}{|\vec{r}_2-\vec{r}_1|}
+  %        \end{equation}
+  %        \item from this equation, Kepler's empirical laws could be 
+  %          derived mathematically/theoretically (theoretical underpinning)
+  %        \item inverse square law is responsible for first and third 
+  %          Kepler law, conservation of angular momentum for second one
+  %        \item Vis Viva equation \cite{vis_viva_equation}
+  %        \item gravitational potential created by central star and planet is
+  %          \begin{equation}
+  %            \Phi=\frac{GM_S}{|\vec r-\vec r_S|}+\frac{Gm_P}{|\vec r-\vec r_P|}
+  %          \end{equation}
+  %        \item for near circular orbit, centrifugal and gravitational forces 
+  %          are equal ($m$ is mass of particle, gas? planet? what 
+  %          about $e\neq0$?)
+  %          \begin{equation}
+  %          \frac{mv^2}{r}=G\cdot\frac{M_S\cdot m_p}{r^2}
+  %          \end{equation}
+  %        \item solving for $v$ gives so-called Kepler velocity 
+  %          \begin{equation}
+  %            v_{Kepler}=\sqrt{\frac{G\cdot M_S}{r}}
+  %          \end{equation}
+  %        \item rewrite with $\Omega_{Kepler}$
+  %        \item this is equivalent to Kepler's third law, can be shown easily 
+  %          with $\Omega=\frac{2\pi}{T}$
+  %      \end{itemize}
+  %  
+  %      \myparagraph{The Roche Limit \red{(relevant? Roche Lobe vs. Roche Limit?)}}
+  %        Let us consider two identical masses $m$ in orbit around a central mass
+  %        $M$. The central body exerts a gravitational force on both of the
+  %        orbiting masses, which can be expressed as
+  %        \begin{equation}
+  %          F_i=G\cdot\frac{M\cdot m}{r_i^2}
+  %        \end{equation}
+  %        Here, \red{$G$ labels the Newtonian gravitational constant and} $r_i$ is 
+  %        the distance from the central body to one of the two orbiting masses,
+  %        characterized by the index $i\in\{1,2\}$. The \textit{tidal force}
+  %        \begin{equation}
+  %          \Delta F=F_2-F_1
+  %        \end{equation}
+  %        is defined as the difference of these two forces. Whether or not the two
+  %        bodies form a bound system relies on whether or not the tidal force is 
+  %        greater than the mutual gravitational attraction between the two bodies, 
+  %        which can be written as 
+  %        \begin{equation}
+  %          F_{12}=G\cdot \frac{m^2}{r_{21}^2},
+  %        \end{equation}
+  %        where $r_{12}$ denotes the distance between the two orbiting masses. The 
+  %        Roche limit is reached when the following relation holds:
+  %        \begin{equation}
+  %          F_{12}=\Delta F,
+  %        \end{equation}
+  %        which can be expanded into
+  %        \begin{equation}
+  %          G\cdot M\cdot m\cdot(\frac{1}{r_2^2}-\frac{1}{r_1^2})
+  %          =G\cdot \frac{m^2}{r_{12}^2}
+  %        \end{equation}
+  %        and then simplified to 
+  %        \begin{equation}
+  %          M\cdot(\frac{1}{r_2^2}-\frac{1}{r_1^2})
+  %          =m\cdot\frac{1}{r_{12}^2}
+  %        \end{equation}
+  %        \begin{equation}
+  %          r_{12}^2\frac{r_1^2-r_2^2}{r_1^2\cdot r_2^2}
+  %          =\frac{m}{M}
+  %        \end{equation}
+  %        \red{...} \\
+  %        \red{masses will not be bound if $r_{12}\leq r_{crit.}$} \\
+  %        \red{(later used when FARGO2D1D accretes material from inside Roche lobe?)}
+  %  
+
+  \newpage
+  \section{Proto-Planetary Disks}
+%    Observations of young stars have verified the nebular hypothesis
+%    Since the early 1980s, studies of young stars have shown them to actually 
+%    be surrounded by disks of dust and gas, just as the nebular hypothesis 
+%    suggested. 
+%    The first image of a proto-planetary disk was reported in
+%    July 2018 \red{(PDS 70b)} \red{[cite]}. 
+%    Since then, \red{how many} 
+%    proto-planetary disks have been observed \red{[cite]}.
+%    \begin{figure}[h!]
+%      \centering
+%      \includegraphics[width=.5\textwidth]{ALMA_eso1611a}
+%      \caption{
+%        proto-planetary disk around the star TW Hydrae, observed with ALMA
+%        \cite{proto-planetary_disk_around_TW_Hydrae_image}
+%        \red{(more images)}
+%      }
+%      \label{fig:proto-planetary_disk_around_TW_Hydrae}
+%    \end{figure} \ \\ 
+%    From observations like this one many insights into the evolution of 
+%    extra-solar planets as well as the origin of planets in our own Solar 
+%    System can be acquired. \\
+%    \\
+    The current scientific consensus on the origin theory of stars and planets 
+    is based on the nebular hypothesis, which states that proto-planetary disks 
+    form when large interstellar clouds of molecular gas collapse under 
+    their own gravity (\citeauthor{Woolfson_1993}, \citeyear{Woolfson_1993}).
+    The chemical composition of these disks is dominated by the contribution of 
+    \ch{H2}, which in most cases makes up about 98\% of the disk by 
+    mass. Besides that, there are also small quantities of helium, lithium and 
+    trace amounts of heavier elements. In observed disks, most of the matter is 
+    present in the form of gas, but some of it also exists as dust.
+    The exact ratio of dust to gas and the distribution of these two components 
+    throughout the disk is still largely unknown (\citeauthor{Birnstiel_2010}, 
+    \citeyear{Birnstiel_2010} and \citeauthor{Soon_2019}, \citeyear{Soon_2019}).
+%    In the early universe, these clouds formed from the material created in 
+%    the Big Bang after the expansion 
+%    Shortly after the Big Bang, most of the matter in the universe consisted of 
+%    hydrogen along 
+%    \red{Origin of clouds?} \\
+    \\
+    \\
+    The collapse of such a cloud leads to a drastic increase of gas density, 
+    pressure and temperature at its center, which for high mass clouds results 
+    in the formation of a star. 
+    Conforming to the law of momentum 
+    conservation, the cloud's angular velocity increases during the collapse.
+    Also, the initially present statistical distribution of velocities averages 
+    out in favor of the clouds's net angular momentum.
+    The centrifugal force present in a rotating reference frame can only 
+    balance out the pull of gravity along the radial axis. Therefore, the cloud
+    flattens out into a disk much more wide than thick, supported
+    only by gas pressure along the axis orthogonal to the disk. 
+    Typical disk radii are on the order of a few 100 AU 
+    (\citeauthor{Pfalzner_2015}, \citeyear{Pfalzner_2015}).
+    % In our own Solar System, this collapse and flattening process took 
+    % approximately \red{x years} 
+    % \cite{cite}. 
+    \\
+    \\
+    The flattened cloud can also be regarded as an accretion disk around the 
+    central star, which after an initial accretion phase 
+    % on timescales of approximately \red{x years} 
+    makes up almost all ($>$ \SI{99}{\percent}) of the mass in the disk. 
+    % \cite{cite}
+    Planets form from the remaining gas and dust in orbit around the star. 
+    % This gas heats up due to friction and radiates 
+    % away energy, which can be observed with submillimeter telescopes.
+    \autoref{fig:proto-planetary_disk} shows two images of proto-planetary disks 
+    that were observed at the 
+    \textit{Atacama Large Millimeter/submillimeter Array}
+    (ALMA). The images show the thermal emission of millimeter-sized grains.
+    Multiple circular dark regions can be seen, which could be caused by 
+    planets that push the dust particles aside due to the influence of the 
+    planet's gravity on the disk structure.
+    (e.g. \citeauthor{Paardekooper_2006}, \citeyear{Paardekooper_2006}).
+    % Those are
+    % regions where the gas has partially been depleted by an exchange of
+    % angular momentum with the planet.
+%    % TODO: does Fig. 1.1.b render correctly?
+%    Figure\autoref{fig:proto-planetary_disk_around_TW_Hydrae:b} 
+%    shows the
+%    proto-planetary disk around the start \textit{TW Hydrae}. At a distance of 
+%    roughly 175 light years, it is relatively close to the Earth. 
+%    Additionally, its quite young age of 
+%    about 10 million years and relative inclination of roughly 90 degrees 
+%    \red{(face-on view)} make it a good target for observation. \\
+%    \\
+%    In our own Solar System, the Sun 
+%    makes up $<$ \SI{99}{\percent} of the total mass.
+%    \begin{itemize}
+%      \item collapse takes about 100.000 years
+%        $\Rightarrow$ then, star has similar temperature to main sequence 
+%        star of same mass, becomes visible
+%      \item oldest disk ever observed: 25 million years
+%        % White, R.J. & Hillenbrand, L.A. (2005). "A Long-lived Accretion Disk
+    %        around a Lithium-depleted Binary T Tauri Star". The Astrophysical
+    %        Journal. 621 (1): L65--L68. arXiv:astro-ph/0501307. Bibcode:2005ApJ...621L..65W. doi:10.1086/428752. - Cain, Fraser; Hartmann, Lee (3 August 2005). "Planetary Disk That Refuses to Grow Up (Interview with Lee Hartmann about the discovery)". Universe Today. Retrieved 1 June 2013.
+%      \item after that, gas is either blown away by stellar wind or simply stops emitting radiation
+%    \end{itemize} \ \\
+%    The nebular hypothesis forms the basis for the current scientific consensus
+%    \red{to explain} the origin of stars and planets. It states that
+%    proto-planetary disks come into existence when large interstellar clouds of 
+%    molecular gas collapse under their own gravity. \red{origin of the clouds?}
+    \\
+    \\
+    \begin{figure}[h!]
+      \centering
+      \begin{minipage}{.5\linewidth}
+        \centering
+        \subfloat[Disk around \textit{HL Tau} \cite{ALMA_HL_Tau}]{
+          \label{fig:proto-planetary_disk:a}
+          \includegraphics[width=.9\linewidth]{ALMA_HL_Tau}
+        }
+      \end{minipage}%
+      \begin{minipage}{.5\linewidth}
+        \centering
+        \subfloat[Disk around \textit{TW Hydrae} \cite{ALMA_TW_Hydrae}]{ 
+          \label{fig:proto-planetary_disk:b}
+          \includegraphics[width=.9\linewidth]{ALMA_TW_Hydrae}
+        }
+      \end{minipage}
+      \caption{Proto-planetary disks around the stars \textit{HL Tau} and 
+        \textit{TW Hydrae}, observed at submillimeter wavelengths at
+        \textit{ALMA}. The dark rings indicate regions of lower gas density,
+        hinting at the existence of exoplanets. 
+      }
+
+      \label{fig:proto-planetary_disk}
+    \end{figure}
+    %The direction of the net 
+    %angular momentum vector defines the disk's orientation, since the gas is 
+    %free to fall towards the center along any \red{position component} not 
+    %parallel to the radial vector \red{gravity vs. centripetal force}.
+    %\red{This leads to a thin disk only supported by gas pressure along the 
+    %$z$-axis}. 
+
+    \newpage \noindent
+    To construct a simplified model of a proto-planetary disk in two dimensions,
+    we use cylindrical coordinates $(r,\varphi,z)$. In this model, the 
+    disk is situated at $z=0$ and is infinitesimally thin. Since observations 
+    show proto-planetary disks to be much more wide than thick anyways, this 
+    assumption makes it possible to obtain a relatively accurate, yet much 
+    less computationally constraining model. It allows us to ignore the 
+    $z$-dependence of the parameters describing the disk, including gas 
+    density, temperature and rotational velocity. Going from a 3D model to a 
+    2D model in this way naturally suggests the definition of a surface density
+    \begin{equation}
+      \Sigma(r,t)=\int_{-\infty}^{\infty}\rho(z,t)\cdot dz
+    \end{equation}
+%    Because the disk is much more wide then thick, it is possible to obtain 
+%    a relatively accurate, yet less computationally \red{aufwaendig} model by 
+%    vertically integrating the hydrodynamical equations and only working
+%    with vertically \red{averaged} state variables \cite{cite}. 
+%    This greatly simplifies \red{what?}.
+%    \\
+%    \\
+    In this highly simplified model, all inhomogenities in the chemical 
+    composition of the disk are neglected. The disk is assumed to consist 
+    entirely of individual gas particles with a mean molecular mass $m_{mol}$.
+    The temperature is vertically isothermal and under the assumption of a 
+    constant aspect ratio (which is defined below) is proportional to $1/r$.
+    % and uniform temperature $T$.
+    If the gas were perfectly Keplerian, the trajectory of such a gas 
+    particle in the gravitational potential of a star with mass $M_*$ would
+    be described by Kepler's laws. Assuming a circular orbit, the angular 
+    frequency could then be expressed as
+    \begin{equation}
+      \Omega_K=\sqrt{\frac{G M_*}{r^3}}
+      \label{eq:kepler_freq}
+    \end{equation}
+    In reality, the gas in a disk does not orbit its parent star in a 
+    perfectly Keplerian way, 
+    % since the pressure gradient 
+    % non-neglectable viscosity of the gas
+    % leads to slightly 
+    with lower rotation velocities than one would expect from 
+    \autoref{eq:kepler_freq}. This is due to the pressure gradient in the disk, 
+    which effectively leads to a decreased gravity felt by the gas.
+    If, additionally, a planet is present in the disk 
+    and its interactions with the gas are taken into account, the trajectories 
+    of individual bodies (planet or gas particles) in this system become 
+    impossible to determine analytically, therefore making the utilization
+    of numerical simulations very attractive.
+    \\ %\red{moving coordinate system}
+    \\
+%    much more wide then thick (to be expected for near-Keplerian rotation)
+%    $\Rightarrow$ vertically integrate hydrodynamical 
+%    equations, work only with vertically averaged state variables \\
+%    \begin{figure}[h!]
+%      \centering
+%      \includegraphics[width=\textwidth]{proto-planetary_disk_early_evolution_sketch}
+%      \caption{\red{early evolution of proto-planetary disk}}
+%    \end{figure} \ \\ 
+    Since they mostly probe the outer domains of proto-planetary 
+    disks, millimeter observations as of yet do not give much information about 
+    the gas density profile in the inner regions of the disk
+    (\citeauthor{Dullemond_2010}, \citeyear{Dullemond_2010}). 
+    A first approach to modeling the gas
+    surface density's dependency on $r$ is to assume a simple power law:
+    \begin{equation}
+      \Sigma(r)=\Sigma_0\cdot\bigg(\frac{r}{r_0}\bigg)^{-\gamma}
+      \label{eq:surface_density_as_fct_of_r}
+    \end{equation}
+    In our case, $r_0$ labels the distance of the planet from the star and 
+    $\Sigma_0:=\Sigma(r_0)$ is the surface gas density at the position of the 
+    planet. The slope of $\Sigma(r)$ is characterized by the parameter $\gamma$, 
+    which is assumed to be equal to 1 in thesis.
+    % which is commonly assumed to be $\approx1$, and we will do so 
+    % as well in this thesis. 
+    % \red{(cutoff radius?)}
+%    throughout this thesis \red{(from where?)} \cite{cite}.
+%    \blue{dullemond,
+%    Millimeter observations probe the outer disk regions (r ?? 40 AU). They say 
+%    little about the planet-forming regions (r ?? 40 AU). The surface density 
+%    of matter in these inner regions is inferred by extrapolation, often 
+%    simply assuming a powerlaw ?(r) ? r?3/2 or so. This powerlaw is, however, 
+%    an assumption, not a fact.
+%    }
+    \\
+    \\
+    Even though the disk will be treated as a 2D object in this thesis,
+    it is important to talk about the geometry of real disks observed in 
+    the night sky. Contrary to what one might expect without any prerequisite 
+    knowledge, observations show that the spatial extension in $z$-direction of 
+    proto-planetary disks grows larger with increasing distance from the star.
+    % TODO:\cite{cite}. 
+    An approximation of this can be made by expressing the surface scale height
+    $H$ as a polynomial function of the distance from the center $r$. With 
+    $H_0:=H(r_0)$, this can be written as
+    \begin{equation}
+      H(r)=H_0\cdot\bigg(\frac{r}{r_0}\bigg)^{\beta}
+      \label{eq:def_surface_scale_height_as_a_fct_of_r}
+    \end{equation}
+    Here, $\beta$ labels the so-called \textit{flaring index}. A disk with 
+    $\beta>0$ is called a \textit{flared disk}. Throughout most of this thesis, 
+    we will 
+    assume a non-flared disk with $\Sigma(r)=\Sigma_0$, i.e. $\beta=0$.
+    % \red{(TODO: observations, typical values \cite{cite})}. \\
+    % TODO: \blue{flaring index $=0\Rightarrow$ constant disk width} \\
+    A sketch of a non-flared as well as a flared disk can be seen in
+    \autoref{fig:flaring_disk}.
+
+    \newpage \noindent
+    \autoref{eq:def_surface_scale_height_as_a_fct_of_r} suggests the definition 
+    of another useful parameter, namely the \textit{aspect ratio} 
+%    at a radial position $r$
+    \begin{equation}
+      h_r(r):=H(r)/r
+    \end{equation}
+    A commonly used value to set up the disk's ratio of height to width is 
+    $h_r(r_0)=0.05$
+    (see e.g. \citeauthor{Kley_1999}, \citeyear{Kley_1999}), 
+    which will be used in most of the simulations discussed in this thesis.
+%    \red{flaring index? $h_r(R=0)$, $r\in[10\ AU, 1000\ AU]$}
+    \\
+    \\
+    % Close to the central star, volatile molecules like water and methane can not
+    % exist in a stable form due to their low \red{melting points (?)}.
+    % Not being able to condense into larger and heavier structures, those 
+    % molecules are carried beyond the \red{\textit{frost line}} into the outer 
+    % regions of the disk by the radiation pressure of the solar wind, 
+    % whereas heavier elements like metals can stay closer to the center. \\
+    %
+    % In our model, each gas particle in the disk feels three different forces
+    % acting on it. Gravitation pulls the particle inwards, inertal/centrifugal 
+    % forces act in the opposite direction and forces due to gas pressure are 
+    % directed outwards as well as upwards in $z$-direction. Assuming a 
+    % vertical hydrostatic equilibrium, these three forces balance out.
+    % \\
+    % \\
+    To model the disk's viscosity, the $\alpha$-description is used:
+    \begin{equation}
+      \nu=\alpha_{visc}\cdot\frac{c_s^2}{\Omega_K}
+    \end{equation}
+    It is assumed that the parameter $\alpha_{visc}$ is constant throughout 
+    the disk and does not change with time. Observations of real 
+    proto-planetary disk show typical values to be roughly around 
+    $10^{-4}$ (e.g. \citeauthor{Dullemond_2018}, \citeyear{Dullemond_2018}), 
+    whereas for numerical simulations the alpha parameter is 
+    often assumed to be a few magnitudes smaller, and is commonly set to
+    $\alpha_{visc}=10^{-2}$ (e.g. \citeauthor{Bailli_2016}, 
+    \citeyear{Bailli_2016}). Here we remain agnostic about the different alpha 
+    values and use $\alpha_{visc}=10^{-4}-10^{-2}$.
+    % Reasons for this disrepancy have been described 
+    % by \citeauthor{King_2007} (\citeyear{King_2007}). 
+    The viscous
+    evolution of the gas surface density over time is taken from
+    \citeauthor{Lynden_Bell_1974} (\citeyear{Lynden_Bell_1974}), where it is 
+    expressed as
+    \begin{equation}
+      \frac{\partial\Sigma}{\partial t}(r,t)=
+      \frac{3}{r}\cdot\frac{\partial}{\partial r}
+      \bigg(\sqrt{r}\cdot\frac{\partial}{\partial r}
+      \nu\cdot\Sigma(r,t)\cdot\sqrt{r}\bigg)
+      \label{eq:viscous_evolution}
+    \end{equation} \ \\
+    \\
+    \\
+    % tend to derive estimates for ? which are an order of magnitude smaller.
+    % between $10^{-1}$ and $10^{-3}$ \cite{cite}. \\
+    % \\
+    % temperature of gas in disk relatively cool, between 10 and $10^3$ K.
+    % \red{\SI{1e4}{\kelvin}}, assumed to be constant throughout the disk 
+    % $\Rightarrow$ isothermal 
+    % The total energy of a body in orbit around a central mass $M_*$ at a 
+    % radial distance $r$ and a velocity vector $\vec v$ is given by the sum 
+    % of the kinetic and potential energy terms. Assuming the body does not 
+    % lose energy over time, 
+    % \begin{equation}
+    %   -G\frac{M_*}{r}+\frac{{\vec v}^2}{2}=-G\frac{M_*}{a}
+    % \end{equation}
+    % We saw in the observartion images in \autoref{fig:proto-planetary_disk} 
+    % that planets can open up a gap in the disk. As a part of this thesis, we 
+    % will investigate the influence of a planet's mass and eccentricity on the 
+    % eccentricity of this gap.
+    % Under the assumption of hydrostatic equilibrium, the disk's local 
+    % isothermic sound velocity can be expressed as
+    % \begin{equation}
+    %   c_s=H\cdot\Omega_K=h_r\cdot v_{K} %=^?\sqrt{\frac{kT}{\mu m_p}}
+    % \end{equation}
+    % and the pressure of the gas is described by %\cite{kley_accretion_1999}
+    % \begin{equation}
+    %   P=c_s^2\cdot a\cdot\Sigma  
+    % \end{equation}
+    % This last equation will be of importance when investigating the 
+    % eccentricity of the gap that forms around the planet. For this, the 
+    % gap boundaries need to be determined, which can be done by calculating 
+    % the maxima and minima in the gas pressure gradient.
+    % % (\citeauthor{Crida_2006} (\citeyear{Crida_2006})).
+    % \red{(TODO: adjust the last few sentences since I probably won't be 
+    % using the pressure gradient method)}
+%    \red{
+%      hydrodynamical equations, 
+%      model of the disk, fluid dynamics, viscosity (also numerical viscosity?) 
+%    }
+%    ,with the sigma slope $\gamma\approx1$ \cite{cite}
+%    cutoff radius (not $r_c$, is it?) 
+%    The size of proto-planetary disks depends largely on the mass of the
+%    initial gas cloud \cite{cite} and \red{what are typical values?}. \\
+%    \\
+%    \subsection{Disk Formation}
+%
+%      \begin{itemize}
+%        \item outcome: thin disk supported in vertical direction by gas pressure
+%          % Pringle, J.E. (1981). "Accretion discs in astrophysics". Annual 
+%          % Review of Astronomy and Astrophysics. 19: 137--162. 
+%          % Bibcode:1981ARA&A..19..137P. doi:10.1146/annurev.aa.19.090181.001033.
+%        \item can be modeled as ideal gas
+%      \end{itemize}
+%
+%    \subsection{Star Formation in the Center of the Disk}
+%
+%      \begin{itemize}
+%        \item accretion of gas onto star
+%        \item star forming in the center of the disk
+%        \item continues for about 3-10 million years
+%          % Mamajek, E.E.; Meyer, M.R.; Hinz, P.M.; Hoffmann, W.F.; Cohen, M. &
+    %          Hora, J.L. (2004). "Constraining the Lifetime of Circumstellar
+    %          Disks in the Terrestrial Planet Zone: A Mid-Infrared Survey of
+    %          the 30 Myr old Tucana-Horologium Association". The Astrophysical
+    %          Journal. 612 (1): 496--510. arXiv:astro-ph/0405271. Bibcode:2004ApJ...612..496M. doi:10.1086/422550
+%        \item 
+%        \item
+%        \item
+%      \end{itemize}
+%      \begin{itemize}
+%        \item radii of up to 1000 AU (between 10s and 100s AU)
+%        \item much more wide than thick: \blue{
+%          In an accretion disc the vertical thickness $H$ is usually assumed to 
+%          be small in comparison to the distance $r$ from the centre, 
+%          i.e. $H/r\ll 1$. This is naturally expected when the material is in 
+%          a state of near Keplerian rotation. Then one can vertically 
+%          integrate the hydrodynamical equations and work only 
+%          with vertically averaged state variables.}
+%      \end{itemize}
+    \\ 
+    \\
+    \\
+    \\ 
+    \\
+    \begin{figure}[h!]
+      \centering
+      \begin{minipage}{.5\linewidth}
+        \centering
+        \subfloat[non-flared disk]{
+          \includegraphics[scale=.8]{flat_disk}
+        }
+      \end{minipage}%
+      \begin{minipage}{.5\linewidth}
+        \centering
+        \subfloat[flared disk]{
+          \includegraphics[scale=.8]{flaring_disk}
+        }
+      \end{minipage}
+      \caption{Qualitative sketches of the difference between flared and 
+        non-flared disks
+        % TODO: replace with more detailed plots
+      }
+      \label{fig:flaring_disk}
+    \end{figure}
+  
+  \newpage
+  \section{Planets in the Disk}
+
+    \subsection{Planet Formation}
+
+      Most standard planet formation theories assume the initial buildup of a 
+      central rocky core \cite{Kley_1999}.
+%    \red{(few Earth masses)}
+      From this point on, the proto-planet may either develop into a terrestrial 
+      planet or into a giant planet consisting of a rocky core and a large 
+      gaseous hull. In our own Solar System, the four terrestrial planets are 
+      those situated closest to the Sun, while the four gas and ice giants sit 
+      in the outer regions of the Solar System. \\
+      \\
+      This is probably no coincidence.
+      Most of the matter in the universe, and therefore most likely also most 
+      matter in 
+      newly formed disks, consists of light elements like hydrogen and helium.
+%    disk consists either of light elements like hydrogen and helium in 
+%    gaseous form or, beyond the frost line, of molecules like methane and 
+%    water,
+      Because of the radiation pressure of the solar wind, these light elements 
+      accumulate in the outer regions of the disk. Therefore, an 
+      accreting planetoid in the outskirts of the disk has much more material 
+      available for accretion in its vicinity than one positioned close to the 
+      center.
+%      \red{(ice/frost line: which elements outside, which inside, why?)}
+%    it makes 
+%    sense that the inner terrestrial planets in our Solar System are much 
+%    smaller than the outer gaseous giants.
+      \\
+      \\
+%    The latter \red{happens} if the proto-planet forms outside of the
+%    ice line
+%    , \red{where the lighter atoms are, e.g. \ch{H2}...} 
+%    \red{[cite]} \\
+    %\\
+%    Several stages can be distinguished during the initial planet formation 
+%    process. In the beginning, the effect of gravitational interactions can 
+%    be neglected, since the proto-planet forms from the material in the disk, 
+%    which consists mostly of very light particles.
+      In the early stages of planet formation, gravity does not play a dominant 
+      role. Gas and dust grains collide and stick together mainly via 
+      microphysical processes like van der Waals or Coulomb forces
+%      electromagnetic \red{(Coulomb?)} forces
+      (\citeauthor{Ward_1996}, \citeyear{Ward_1996}).
+      These processes are not still entirely understood today.
+      It is unclear how the early planet cores manage to
+      grow without fragmenting into smaller pieces again at collisions with 
+      other, similarly-sized planetesimals
+      (\citeauthor{Morbidelli_2016}, \citeyear{Morbidelli_2016}). \\
+      % . This problem is known as the 
+      % meter-sized barrier 
+      \\
+      The early development of planetesimals will not be studied in this 
+      thesis. It is assumed that the initial buildup of a planet core has 
+      already taken place. From this point on, planets grow either by
+      direct collisions with other bodies or via gravitational capture of gas
+      (\citeauthor{Morbidelli_2016}, \citeyear{Morbidelli_2016}).
+%      \red{core accretion vs. gravitational instabiliy} \\
+%      \\
+%      \red{Instead, ... already large planet ($\sim$ Jupiter) is placed in 
+%      a disk} \\
+%    van der Waals forces and electromagnetic forces, forming micrometer-sized 
+%    particles; during this stage, accumulation mechanisms are largely 
+%    non-gravitational in nature.[18] However, planetesimal formation in 
+%    the centimeter-to-meter range is not well understood, and no 
+%    convincing explanation is offered as to why such grains would 
+%    accumulate rather than simply rebound.[18]:341 In particular, it is 
+%    still not clear how these objects grow to become 0.1-1 km 
+%    (0.06-0.6 mi) sized planetesimals;[5][19] this problem is known as 
+%    the "meter size barrier":[20][21]
+      This leads to the eventual formation of circumplanetary accretion disks
+%    which are accretion disks of gas onto the planet, 
+      similar to the proto-planetary disk itself, 
+      but on much smaller scales. % \red{(how many AU approximately?)}
+      \\
+      \\
+      % To give a sense of the time scales, ...
+      % \red{for $\alpha=10^{-3}$ and $H/R=0.05$ the accumulation of mass 
+      % to one Jupiter mass is on the timescale of $\approx\SI{e5}{a}$} \\
+      % \\
+      The accreted material comes mostly from inside the planet's Hill sphere 
+      (also called the Roche sphere). % TODO: or horseshow region ?
+      % \cite{cite}. 
+      This is the region in space where the gravitational 
+      influence of the planet's is larger than that of its central star
+      (\citeauthor{Hamilton_1992}, \citeyear{Hamilton_1992}). 
+      If a body with mass $m$ orbits a larger 
+      mass $M$ with a semi-major axis $a$ and eccentricity $e$, the 
+      radius of the Hill sphere can be approximated by
+      \begin{equation}
+        r_H\approx a(1-e)\sqrt[3]{\frac{m}{3M}}
+        % \textnormal{\ \ \red{(why only approximately?)}}
+        \label{eq:def_hill_radius}
+      \end{equation}
+      To simulate a proto-planetary disk, this thesis makes use of the 
+      \textit{FARGO2D1D} algorithm, which will be discussed in detail in 
+      \autoref{sec:fargo_algorithm}. The code handles accretion by 
+      including both a Kley and a Machida accretion subroutine, 
+      which are also given a detailed description in that section. Since the 
+      accretion process is a highly complex process including a very large 
+      number of individual particles, this can not be simulated in detail and 
+      simplifications have to be made. The Kley and Machida accretion 
+      constitute one way of doing this, but many different models of 
+      accretion have been suggested, e.g. by \citeauthor{Matsumura_2017} 
+      (\citeyear{Matsumura_2017}), \citeauthor{aless2018accretion}
+      (\citeyear{aless2018accretion}) or \citeauthor{Schulik_2019} 
+      (\citeyear{Schulik_2019}). \\ 
+      \\
+      For most simulations, the planet will be kept on a fixed orbit so that 
+      there is no migration.
+    
+    \newpage
+    \subsection{Gap Formation}
+      Recent observations of proto-planetary disks often show dark, circular 
+      regions around the star, as we already saw in the \textit{ALMA} images 
+      in \autoref{fig:proto-planetary_disk}.
+      % \cite{ALMA_HL_Tau}\cite{ALMA_TW_Hydrae}.
+      It is assumed that these are created by proto-planets that form in orbit 
+      around the star. When sufficiently grown, a 
+      proto-planet exerts tidal torques on the disk and thereby induces 
+      trailing spiral shocks (\citeauthor{Kley_1999}, 
+      \citeyear{Kley_1999}). Via these, angualar momentum is 
+      transfered between the disk and the planet, which has the effect of 
+      material being pushed away from the proto-planet. To be more precise, 
+      the planet loses some of its angular momentum 
+      to the outer part of the disk, while it receives some from the inner 
+      part. \\
+      \\
+      This process 
+      eventually leads to the the opening of a gap in the disk. The criteria
+      for gap opening depend on the the viscosity, pressure 
+      and planetary mass. They are discussed in detail in 
+      Lin \& Papaloizou (1986, 1993) as well as \citeauthor{Crida_2006} 
+      (\citeyear{Crida_2006}). The width of the gap, i.e. 
+      extent in radial direction, also depends on the mass of the 
+      planet, as well as the viscosity and gas pressure in the disk 
+      (\citeauthor{Lin_Papaloizou_1993}, \citeyear{Lin_Papaloizou_1993}). \\
+      \\
+      After the formation of the gap, there is still accretion from regions 
+      outside or inside the planet's orbital radius, since the internal 
+      evolution of the disk tends to spread the gas back into the void regions
+      by diffusion (\citeauthor{Kley_1999}, 
+      \citeyear{Kley_1999}). Thus, the accretion rate after gap 
+      opening has occurred is further influenced by the thickness of the disk 
+      as well as the viscosity of the gas.
+      % \begin{itemize}
+              % (..., Lin \& Papaloizou 1980, Goldreich \& Tremaine 1980, 
+              % and Papaloizou \& Lin 1984). 
+        % \item These transport angular momentum and material is pushed 
+        %       away from the proto- planet, a process which leads eventually to 
+        %       the opening of a gap in the disk (cite). The detailed criteria of 
+        %       gap opening are given by 
+        %       \red{also Crida 2006?}
+        % \item continued accretion through the gap \cite{cite}:
+        %       even after the formation of the gap, there is still accretion
+        %       from regions outside or inside the planet's orbital radius
+        %       $\Rightarrow$ rate depends on the viscosity of the gas in the disk
+        %       as well as the disk's thickness
+        % \item \blue{The modification of the disk density is the result of the 
+        %   competition of torques exerted on the disk by the planet and 
+        %   by the disk itself. \cite{crida}}
+      % \end{itemize}
+%      \blue{Du koenntest da noch sagen, dass die viskositaet die Gap
+%      schliessen will und dies dann auch dazu fuehrt, dass mehr gas in
+%      die Horseshoe region fliessen kann, was dafuer sorgt,
+%      dass der Planet mehr akkretieren kann.}
+
+%    \subsection{Terrestrial Planets \& Gas Giants} 
+%      \begin{itemize}
+%        \item in our solar system: inner rocky planets, outer gaseous planets
+%        \item probably no coincidence
+%        \item inner terrestrial planets, outer gaseous planets (gaseous planets 
+%          beyond the frost line much larger, since there is much more ice 
+%          than heavier elements $\Rightarrow$ could grow large enough to 
+%          capture abundant \ch{H2} and \ch{He})
+%      \end{itemize}
+%
+%      \myparagraph{Formation of Terrestrial Planets}
+%
+%        \begin{itemize}
+%          \item inner regions
+%          \item heavier elements
+%          \item inside the frost line
+%          \item
+%          \item
+%        \end{itemize}
+%
+%      \myparagraph{Formation of Gas Giants}
+%
+%        \begin{itemize}
+%          \item 
+%          \item 
+%          \item 
+%        \end{itemize}
+
+%    \newpage 
+%\section{Definitions}
+%
+%  \myparagraph{Standard Gravitational Parameter}
+%  The \textit{standard gravitational parameter} $\mu$ is defined as 
+%  \begin{equation}
+%    \mu:=G\cdot M
+%  \end{equation}
+%  Here, $G$ is the Newtonian constant of gravitation and $M$ the mass of the
+%  disk's central star. 
+%
+%\section{Laws of Planetary Motion}
+%
+%  \myparagraph{The \textit{vis viva} equation}
+%  To model the trajectories of orbiting bodies, the following relation can be
+%  used\cite{vis_viva_equation}:
+%  \begin{equation}
+%    v^2=GM\bigg(\frac{2}{r}-\frac{1}{a}\bigg)
+%  \end{equation}
+%  For a circular orbit, the approximation $r\approx a$ holds. With
+%  $\Omega=\frac{v}{r}$ this leads to
+%  \begin{equation}
+%    \Omega^2=\frac{GM_\odot}{a^3}
+%  \end{equation}
+%  which can also be easily derived by equating the gravitational and 
+%  centripetal forces.
+%  If, on the other hand, the eccentricity $e\neq0$, then
+%  \begin{equation}
+%    \Omega^2=\frac{GM}{r^2}\bigg(\frac{2}{r}-\frac{1}{a}\bigg)
+%  \end{equation}
+%
+%\section{Fluid Dynamics}
+%
+%\section{proto-planetary Disks}
+%
+%  \subsection{General Model/Approximations \red{(which headline?)}}
+%    \begin{itemize}
+%      \item observations
+%      \item mathematical description
+%        \begin{itemize}
+%          \item fluid dynamics
+%          \item what kind of approximations are necessary?
+%        \end{itemize}
+%      \item numerical approach
+%    \end{itemize}
+%
+%  \newpage
+%    \begin{itemize}
+%      \item gas is supported by gas pressure $\Rightarrow$ orbits slightly 
+%        more slowly as it would if it were purely Keplerian
+%    \end{itemize}
+
+    \subsection{Migration}
+      The interaction of a growing proto-planet with the gas in the disk 
+      can lead to a change in the orbital parameters of the proto-planet, 
+      most importantly a change in the planet's semimajor axis, i.e. 
+      migration of the planet (\citeauthor{Kley_2015}, \citeyear{Kley_2015}).
+      Depending on the mass of the planet, different categories can be 
+      distinguished to describe the migration. \\
+      \\
+      For low-mass planets not massive enough to open up a gap in the disk 
+      (less than about 50 Earth masses), the occuring change in the 
+      orbital elements is commonly labeled as \textit{type I migration}.
+      % The total torque acting on a planet is given 
+      % by the sum of Lindblad torques and the corotation torques generated by 
+      % the gas flow in the coorbital horseshoe region \cite{Kley_2015}
+      % \cite{Paardekooper_2010}. 
+      We will not focus on this type of migration,
+      since all planets in this thesis have masses on similar orders of 
+      magnitude as Jupiter. \\
+      \\
+      For massive planets that are able to form a gap, 
+      \textit{type II migration} occurs. 
+      During the migration period, the gap will move through the disk with the 
+      planet. It is often assumed that in an equilibrium situation, the gap 
+      moves at exactly the same speed as the planet, and that the planet is 
+      locked in the middle of the gap to maintain torque equilibrium 
+      (\citeauthor{Kley_2015}, \citeyear{Kley_2015} and 
+      \citeauthor{Papaloizou_1986}, \citeyear{Papaloizou_1986}) and thus 
+      migrates with the 
+      viscous evolution of the disk. However recent simulations done by
+      e.g. \citeauthor{Kley_2015} (\citeyear{Kley_2015}) or 
+      \citeauthor{Robert_2018} (\citeyear{Robert_2018})
+      have shown that this is not true. In particular the studies by
+      \citeauthor{Kanagawa_2018} (\citeyear{Kanagawa_2018}) 
+      indicate that the migration rate scales with the depth of the gap.
+

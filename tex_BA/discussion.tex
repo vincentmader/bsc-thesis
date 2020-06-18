@@ -1,0 +1,89 @@
+
+\chapter{Discussion}
+  The number of discovered exoplanets has grown drastically in recent 
+  years. This opens up the opportunity to constrain models of the planetary 
+  formation processes using statistical properties extracted from the 
+  population of discovered planets. A promising way to link those models with 
+  observations is with so-called planet population synthesis, where a population 
+  of planets is initialized with randomly distributed parameters. The population 
+  is then allowed to evolve over time and can subsequently be compared with 
+  observation data to assess the accuracy of the involved models. As such, 
+  the most important part of any study using population synthesis is arguably 
+  the planet formation model, which takes in a distribution of initial 
+  parameters and outputs the properties of the emerging planetary system. \\
+  \\
+  Studies utilizing planet population synthesis this have been conducted by 
+  e.g. \citeauthor{Ida_2018} (\citeyear{Ida_2018}), \citeauthor{Benz_2014} 
+  (\citeyear{Benz_2014}) and \citeauthor{Mordasini_2012} 
+  (\citeyear{Mordasini_2012}). When formulating a routine which describes the 
+  accretion rate of disk material onto a planet, none of these mentioned 
+  studies take the planet's orbital eccentricity into account. \\
+  \\
+  % One of the randomly initialized parameters is orbital eccentricity. Most 
+  % \red{...} of population synthesis do not take the eccentricity into 
+  % account when determining the rate of gas accretion onto a planet. \\
+  % \red{cite{cite, Benz}} \\
+  As could be shown in this thesis, the orbital eccentricity can play a 
+  large role in the accretion process. Thus, when trying to construct an 
+  accurate planet formation model, the accretion routine should be modified in 
+  such a way as to take these effects into account. It could also be 
+  beneficial to do this when running N-body simulations like the ones 
+  that have been reported by \citeauthor{Bitsch_2019} (\citeyear{Bitsch_2019}).
+  They also do not take the influence of the orbital eccentricity into 
+  account for the formulation of their mass accretion routine. Since 
+  planet-planet interaction is a viable mechanism for the creation of highly 
+  elliptical orbits, N-body simulations likely lead to a family of bodies 
+  orbiting their parent star on orbits with $e\neq0$. Therefore, these and 
+  similar studies could benefit from incorporating 
+  an eccentricity dependency into their accretion routine. \\
+  \\
+  The disk model that was used in this thesis is a highly simplified one. 
+  While we could show the influence of orbital eccentricities on the rate 
+  of accretion in a qualitative way, it would be advantageous to make use of a 
+  more sophisticated model, when one really wants to determine an accurate 
+  relationship between $e$ and $\dot{m}$.
+  % it would be advantageous to make use of a 
+  % more sophisticated approach. 
+  Obvious ways of improvement include the 
+  utilization of larger values for the grid resolution and integration time.
+  This thesis also treated the disk as being both locally isothermal and 
+  non-flared, as well as ignoring the influence of physical processes like 
+  stellar radiation and magneto-hydro-dynamics in the disk, among others. 
+  A simulation of protoplanetary disks using a more sophisticated approach 
+  could be done to display the relationship between eccentricity and 
+  accretion in a more quantitatively accurate manner, which after the fitting 
+  of a suitable function would then be able to be used in future studies, 
+  improving their results.
+
+  % To be able to improve the accuracy of N-body simulations or population 
+  % synthesis with the results of this thesis, it would be 
+
+
+  % du kannst auch sagen, dass das wichtig wird für n-body simulationen, siehe 
+  % where is eccentricity high? young systems, gas phase, n body, older systems?
+
+  % \begin{itemize}
+  %   \item used very simplified model of the disk 
+  %   \item lots of stuff neglected (MHD, radiation, temperature differences...)
+  %   \item migration: type I, radiation...
+  %   \item still, could show the effect of orbital eccentricity on accretion
+  %   \item 
+  %   \item most models of the early processes inside protoplanetary disks 
+  %     assume that the eccentricity has a negligible effect on accretion 
+  %     \red{\cite{cite}}
+  %   \item planet population synthesis (Bitsch 2018) \\
+  %     Ndugu et al. 2018, Mordasini et al. 2012, Ida et al. 2018
+  %     \url{http://www.mpia.de/homes/ppvi/chapter/benz.pdf}
+  %     \citeauthor{Benz_2014} (\citeyear{Benz_2014})
+  %   \item eccentricity steigt auch durch planet-planet streuuung
+  %   \item 
+  %   \item only relevant for planets massive enough to form a gap, yet still 
+  %     in a gap with enough free material to allow accretion
+  %   \item accurate models of proto-planetary disks should incorporate this 
+  %     into their accretion routines, especially when dealing with young 
+  %     circumstellar disks, where eccentricities are still much higher than 
+  %     in the Solar System
+  %     \red{(talk about how eccentricity is high also in older systems)}
+  %   \item
+  % \end{itemize}
+
