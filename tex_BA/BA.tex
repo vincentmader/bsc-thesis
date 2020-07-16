@@ -2,22 +2,22 @@
 
 % imports
 % =============================================================================
-  \usepackage{biblatex}
-  % \usepackage[citestyle=authoryear]{biblatex}
-  \usepackage{chemformula}
-  \usepackage{caption}
-  %\usepackage[superscript,biblabel]{cite}  % not compatible with biblatex
-  \usepackage{endnotes}
-  \usepackage{fancyhdr}
-  \usepackage[left=1.5cm, right=1.5cm, top=2.5cm, bottom=1.5cm]{geometry}
-  \usepackage{graphicx}
-  \usepackage[hidelinks]{hyperref}
-  \usepackage[utf8]{inputenc}
-  \usepackage{sectsty}      % ?
-  \usepackage{siunitx}
-  \usepackage{subfig}
-  \usepackage{tikz}
-  \usepackage{xcolor}
+\usepackage{biblatex}
+% \usepackage[citestyle=authoryear]{biblatex}
+\usepackage{chemformula}
+\usepackage{caption}
+%\usepackage[superscript,biblabel]{cite}  % not compatible with biblatex
+\usepackage{endnotes}
+\usepackage{fancyhdr}
+\usepackage[left=1.5cm, right=1.5cm, top=2.5cm, bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}      % ?
+\usepackage{siunitx}
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{xcolor}
 
 
 % path definitions
@@ -75,66 +75,66 @@
 % =============================================================================
 \begin{document}
   
-  % title page
-  \pagenumbering{gobble}  % no page numbering (turn back on after title page)
-  \newpage
-  % \thispagestyle{NoHeader}
-  \input{title_page}
-
-  % abstract in both English and German
-  \newpage
-  % \thispagestyle{NoHeader}
-  \input{abstract}
-  \vspace{30px}
-  \input{zusammenfassung}
-
-  % preface & acknowledgements
-  \newpage
-  % \thispagestyle{NoHeader}
-  \input{preface}
-  \newpage
-  % \thispagestyle{NoHeader}
-  \input{acknowledgements}
-
-  % table of contents & figures
-  \newpage
-  \begingroup
-    \pagestyle{plain}
-    \tableofcontents
-    \vspace{300px}
-    \listoffigures
-    \let\LaTeXStandardClearpage\clearpage
-    \let\clearpage\relax  % Do nothing when a \clearpage command appears
-    \vspace{50px}
-    \listoftables
-    \let\clearpage\LaTeXStandardClearpage % Return to the old definition
-  \endgroup
-
-  % header
-  % ---------------------------------------------------------------------------
-  \pagestyle{fancy}
-  \renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
-  \lhead{Gas Accretion Onto Eccentric Planets}
-  \chead{}
-  \rhead{\chaptername\ \thechapter\ --\ \leftmark}
-
-  % introduction
-  \input{introduction}
-
-  % methods
-  \newpage
-  \input{methods}
-
-  % results & discussion
-  \newpage
-  \input{results}
-  \newpage
-  \input{discussion}
-
-  % appendix (references & abbreviations) & declaration
-  \newpage
-  \input{appendix}
-  \newpage
-  \input{declaration}
+    % title page
+    \pagenumbering{gobble}  % no page numbering (turn back on after title page)
+    \newpage
+    % \thispagestyle{NoHeader}
+    \input{title_page}
+  
+    % abstract in both English and German
+    \newpage
+    % \thispagestyle{NoHeader}
+    \input{abstract}
+    \vspace{30px}
+    \input{zusammenfassung}
+  
+    % preface & acknowledgements
+    \newpage
+    % \thispagestyle{NoHeader}
+    \input{preface}
+    \newpage
+    % \thispagestyle{NoHeader}
+    \input{acknowledgements}
+  
+    % table of contents & figures
+    \newpage
+    \begingroup
+      \pagestyle{plain}
+      \tableofcontents
+      \vspace{300px}
+      \listoffigures
+      \let\LaTeXStandardClearpage\clearpage
+      \let\clearpage\relax  % Do nothing when a \clearpage command appears
+      \vspace{50px}
+      \listoftables
+      \let\clearpage\LaTeXStandardClearpage % Return to the old definition
+    \endgroup
+  
+    % header
+    % ---------------------------------------------------------------------------
+    \pagestyle{fancy}
+    \renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+    \lhead{Gas Accretion Onto Eccentric Planets}
+    \chead{}
+    \rhead{\chaptername\ \thechapter\ --\ \leftmark}
+  
+    % introduction
+    \input{introduction}
+  
+    % methods
+    \newpage
+    \input{methods}
+  
+    % results & discussion
+    \newpage
+    \input{results}
+    \newpage
+    \input{discussion}
+  
+    % appendix (references & abbreviations) & declaration
+    \newpage
+    \input{appendix}
+    \newpage
+    \input{declaration}
 
 \end{document} 
