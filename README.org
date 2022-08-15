@@ -1,0 +1,4 @@
+#+author: Vincent C. Mader
+#+title: Gas Accretion onto Eccentric Planets
+
+For the full B.Sc. thesis in PDF form, see [[./B.Sc. Thesis.pdf][here]].
